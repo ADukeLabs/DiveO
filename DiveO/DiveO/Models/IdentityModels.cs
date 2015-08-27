@@ -29,5 +29,9 @@ namespace DiveO.Models
         {
             return new ApplicationDbContext();
         }
+
+        public virtual DbSet<Diver> Divers { get; set; }
+        public virtual DbSet<Dive> Dives { get; set; }
+        public virtual DbSet<Shop> Shops { get; set; } 
     }
 }
