@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Diver</h4>
+        <h4>Create Your Diver Page</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -28,6 +28,9 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.ProfilePic, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ProfilePic, "", new { @class = "text-danger" })
+                <div class="col-md-10">
+                    <input type="file" id="Profile Pic" name="upload"/>
+                </div>
             </div>
         </div>
 
