@@ -38,7 +38,12 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ProfilePic)
+            @*@Html.DisplayFor(modelItem => item.ProfilePic)*@
+            @{
+            var base64 = Convert.ToBase64String(item.ProfilePic);
+            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+            }
+            <img src="@imgSrc" width="100" height="100" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Location)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -46,8 +47,21 @@ namespace DiveO.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,ProfilePic,Location,Description,Certification,CertDate")] Diver diver)
+        public ActionResult Create([Bind(Include = "Id,Name,ProfilePic,Location,Description,Certification,CertDate")] Diver diver, HttpPostedFileBase file)
         {
+            if (file != null)
+            {
+                string pic = System.IO.Path.GetFileName(file.FileName);
+                string path = System.IO.Path.Combine(Server.MapPath("~/images"), pic);
+                file.SaveAs(path);
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    file.InputStream.CopyTo(ms);
+                    diver.ProfilePic = ms.GetBuffer();
+                }
+
+            }
+
             if (ModelState.IsValid)
             {
                 db.Divers.Add(diver);
@@ -78,8 +92,21 @@ namespace DiveO.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,ProfilePic,Location,Description,Certification,CertDate")] Diver diver)
+        public ActionResult Edit([Bind(Include = "Id,Name,ProfilePic,Location,Description,Certification,CertDate")] Diver diver, HttpPostedFileBase file)
         {
+            if (file != null)
+            {
+                string pic = System.IO.Path.GetFileName(file.FileName);
+                string path = System.IO.Path.Combine(Server.MapPath("~/images"), pic);
+                file.SaveAs(path);
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    file.InputStream.CopyTo(ms);
+                    diver.ProfilePic = ms.GetBuffer();
+                }
+
+            }
+
             if (ModelState.IsValid)
             {
                 db.Entry(diver).State = EntityState.Modified;
