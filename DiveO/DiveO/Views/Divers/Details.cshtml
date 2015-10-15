@@ -20,6 +20,11 @@
 
         <dt>
             @Html.DisplayNameFor(model => model.ProfilePic)
+            @*@{
+                var base64 = Convert.ToBase64String(Model.ProfilePic);
+                var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+            }*@
+            @*<img src="@imgSrc" width="100" height="100" />*@
         </dt>
 
         <dd>
