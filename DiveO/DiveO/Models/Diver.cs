@@ -15,7 +15,8 @@ namespace DiveO.Models
         public byte[] ProfilePic { get; set; }
         public string Location { get; set; }
         public string Description { get; set; }
-        public Certification.Cert Certification { get; set; }
+        public Organization.DiveOrganization Organization { get; set; }
+        public CertificationLevel Certification { get; set; }
         public DateTime CertDate { get; set; }
         public virtual ICollection<Dive> Dives { get; set; }
     }
