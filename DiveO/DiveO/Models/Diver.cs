@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 using System.Web.UI.WebControls;
+using DiveO.Models.Model_Attributes;
 
 namespace DiveO.Models
 {
@@ -14,7 +15,7 @@ namespace DiveO.Models
         public byte[] ProfilePic { get; set; }
         public string Location { get; set; }
         public string Description { get; set; }
-        public string Certification { get; set; }
+        public Certification.Cert Certification { get; set; }
         public DateTime CertDate { get; set; }
         public virtual ICollection<Dive> Dives { get; set; }
     }

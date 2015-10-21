@@ -52,19 +52,7 @@ namespace DiveO.Controllers
         {
             if (file != null)
             {
-                //string pic = System.IO.Path.GetFileName(file.FileName);
-                //string path = System.IO.Path.Combine(Server.MapPath("~/images"), pic);
-                //file.SaveAs(path);
-                //using (MemoryStream ms = new MemoryStream())
-                //{
-                //    file.InputStream.CopyTo(ms);
-                //    diver.ProfilePic = ms.GetBuffer();
-                //}
-                if (file != null)
-                {
-                    diver.ProfilePic = new ImageProcessor().ImageToByteArray(file);
-                }
-
+                diver.ProfilePic = new ImageProcessor().ImageToByteArray(file);
             }
 
             if (ModelState.IsValid)
