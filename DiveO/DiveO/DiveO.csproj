@@ -204,6 +204,14 @@
     <Compile Include="Migrations\201510211721312_Enums_Added.Designer.cs">
       <DependentUpon>201510211721312_Enums_Added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510231634276_Cert_Enum.cs" />
+    <Compile Include="Migrations\201510231634276_Cert_Enum.Designer.cs">
+      <DependentUpon>201510231634276_Cert_Enum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510231644104_Organization_Removed.cs" />
+    <Compile Include="Migrations\201510231644104_Organization_Removed.Designer.cs">
+      <DependentUpon>201510231644104_Organization_Removed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Dive.cs" />
@@ -307,6 +315,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510211721312_Enums_Added.resx">
       <DependentUpon>201510211721312_Enums_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510231634276_Cert_Enum.resx">
+      <DependentUpon>201510231634276_Cert_Enum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510231644104_Organization_Removed.resx">
+      <DependentUpon>201510231644104_Organization_Removed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

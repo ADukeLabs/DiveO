@@ -1,57 +1,63 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.Reflection;
 
 namespace DiveO.Models.Model_Attributes
 {
-    public class CertificationLevel
+    public static class Certification
     {
-        public enum BeginnerCertification
+        public enum CertificationLevel
         {
             [Description("PADI Open Water Diver (OWD)")]
-            PadiOpenWaterDiver = 0,
+            PadiOpenWaterDiver,
+
             [Description("SSI Open Water Diver (OWD)")]
-            SsiOpenWaterDiver = 1,
+            SsiOpenWaterDiver,
+
             [Description("NAUI Scuba Diver")]
-            NauiScubaDiver = 2
-        }
+            NauiScubaDiver,
 
-        public enum AdvancedCertification
-        {
             [Description("PADI Advanced Open Water Diver (AOWD)")]
-            PadiAdvancedOpenWaterDiver = 0,
+            PadiAdvancedOpenWaterDiver,
+
             [Description("SSI Advanced Open Water Diver (AOWD)")]
-            SsiAdvancedOpenWaterDiver = 1,
+            SsiAdvancedOpenWaterDiver,
+
             [Description("NAUI Advanced Scuba Diver (ASD)")]
-            NauiAdvancedScubaDiver = 2
-        }
+            NauiAdvancedScubaDiver,
 
-        public enum RescueCertification
-        {
             [Description("PADI Rescue Diver (RS)")]
-            PadiRescueDiver = 0,
+            PadiRescueDiver,
+
             [Description("SSI Diver Stress & Rescue")]
-            SSIDiverStressRescue = 1,
+            SSIDiverStressRescue,
+
             [Description("NAUI Scuba Rescue Diver")]
-            NauiScubaRescueDiver = 2
-        }
+            NauiScubaRescueDiver,
 
-        public enum DiveGuideCertification
-        {
             [Description("PADI Divemaster (DM)")]
-            PadiDiveMaster = 0,
+            PadiDiveMaster,
+
             [Description("SSI Dive Guide (DG)")]
-            SsiDiveGuide = 1,
+            SsiDiveGuide,
+
             [Description("NAUI Divemaster (DM)")]
-            NauiDiveMaster = 2
+            NauiDiveMaster,
+
+            [Description("PADI Open Water Instructor")]
+            PadiOpenWaterInstructor,
+
+            [Description("SSI Open Water Instructor(OWI)")]
+            SsiOpenWaterInstructor,
         }
 
-        public enum DiveInstructorCertification
+        public static string GetDescription(this Enum value)
         {
-            [Description("PADI Open Water Instructor")]
-            PadiOpenWaterInstructor = 0,
-            [Description("SSI Open Water Instructor(OWI)")]
-            SsiOpenWaterInstructor = 1,
-            [Description("NAUI Divemaster (DM)")]
-            NauiDiveMaster = 2
+            FieldInfo field = value.GetType().GetField(value.ToString());
+
+            DescriptionAttribute attribute = Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute)) as DescriptionAttribute;
+
+            return attribute == null ? value.ToString() : attribute.Description;
         }
     }
 }
