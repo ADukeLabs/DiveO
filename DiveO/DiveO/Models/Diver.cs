@@ -16,6 +16,7 @@ namespace DiveO.Models
         public string Location { get; set; }
         public string Description { get; set; }
         public Certification.CertificationLevel Certification { get; set; }
+        [Column(TypeName = "datetime2")]
         public DateTime CertDate { get; set; }
         public virtual ICollection<Dive> Dives { get; set; }
     }

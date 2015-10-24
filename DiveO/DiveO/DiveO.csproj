@@ -218,6 +218,10 @@
     <Compile Include="Migrations\201510231644104_Organization_Removed.Designer.cs">
       <DependentUpon>201510231644104_Organization_Removed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510242139598_CertDate_ChangedTo_datetime2.cs" />
+    <Compile Include="Migrations\201510242139598_CertDate_ChangedTo_datetime2.Designer.cs">
+      <DependentUpon>201510242139598_CertDate_ChangedTo_datetime2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Dive.cs" />
@@ -328,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510231644104_Organization_Removed.resx">
       <DependentUpon>201510231644104_Organization_Removed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510242139598_CertDate_ChangedTo_datetime2.resx">
+      <DependentUpon>201510242139598_CertDate_ChangedTo_datetime2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
