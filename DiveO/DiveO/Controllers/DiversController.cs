@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DiveO.Models;
+using DiveO.Services;
 
 namespace DiveO.Controllers
 {
@@ -51,15 +52,7 @@ namespace DiveO.Controllers
         {
             if (file != null)
             {
-                string pic = System.IO.Path.GetFileName(file.FileName);
-                string path = System.IO.Path.Combine(Server.MapPath("~/images"), pic);
-                file.SaveAs(path);
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    file.InputStream.CopyTo(ms);
-                    diver.ProfilePic = ms.GetBuffer();
-                }
-
+                diver.ProfilePic = new ImageProcessor().ImageToByteArray(file);
             }
 
             if (ModelState.IsValid)
@@ -96,15 +89,7 @@ namespace DiveO.Controllers
         {
             if (file != null)
             {
-                string pic = System.IO.Path.GetFileName(file.FileName);
-                string path = System.IO.Path.Combine(Server.MapPath("~/images"), pic);
-                file.SaveAs(path);
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    file.InputStream.CopyTo(ms);
-                    diver.ProfilePic = ms.GetBuffer();
-                }
-
+                diver.ProfilePic = new ImageProcessor().ImageToByteArray(file);
             }
 
             if (ModelState.IsValid)
