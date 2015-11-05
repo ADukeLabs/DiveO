@@ -1,4 +1,5 @@
-﻿@model IEnumerable<DiveO.Models.Diver>
+﻿@using DiveO.Models.Model_Attributes
+@model IEnumerable<DiveO.Models.Diver>
 
 @{
     ViewBag.Title = "Index";
@@ -26,9 +27,6 @@
         <th>
             @Html.DisplayNameFor(model => model.Certification)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CertDate)
-        </th>
         <th></th>
     </tr>
 
@@ -53,9 +51,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Certification)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CertDate)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

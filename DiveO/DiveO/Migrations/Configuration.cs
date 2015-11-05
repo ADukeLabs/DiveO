@@ -9,7 +9,7 @@ namespace DiveO.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(DiveO.Models.ApplicationDbContext context)

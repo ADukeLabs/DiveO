@@ -1,4 +1,4 @@
-﻿@model DiveO.Models.Diver
+﻿@model DiveO.ViewModels.DiverViewModel
 
 @{
     ViewBag.Title = "Details";
@@ -55,17 +55,9 @@
             @Html.DisplayFor(model => model.Certification)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CertDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CertDate)
-        </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @*@Html.ActionLink("Edit", "Edit", new { id = .Id }) |*@
     @Html.ActionLink("Back to List", "Index")
 </p>

@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using DiveO.Models;
 using DiveO.Services;
+using DiveO.ViewModels;
 
 namespace DiveO.Controllers
 {
@@ -34,7 +35,8 @@ namespace DiveO.Controllers
             {
                 return HttpNotFound();
             }
-            return View(diver);
+            DiverViewModel dvm = new DiverViewModel(diver);
+            return View(dvm);
         }
 
         // GET: Divers/Create

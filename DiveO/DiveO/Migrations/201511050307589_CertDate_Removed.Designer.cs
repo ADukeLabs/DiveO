@@ -7,18 +7,18 @@ namespace DiveO.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Enums_Added : IMigrationMetadata
+    public sealed partial class CertDate_Removed : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Enums_Added));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CertDate_Removed));
         
         string IMigrationMetadata.Id
         {
-            get { return "201510211721312_Enums_Added"; }
+            get { return "201511050307589_CertDate_Removed"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target
