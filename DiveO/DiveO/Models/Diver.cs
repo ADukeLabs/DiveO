@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
-using System.Web.UI.WebControls;
 using DiveO.Models.Model_Attributes;
 
 namespace DiveO.Models
@@ -18,6 +15,5 @@ namespace DiveO.Models
         public Certification.CertificationLevel Certification { get; set; }
         [Column(TypeName = "datetime2")]
         public DateTime CertDate { get; set; }
-        public virtual ICollection<Dive> Dives { get; set; }
     }
 }

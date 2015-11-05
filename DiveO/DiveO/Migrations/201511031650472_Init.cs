@@ -16,8 +16,8 @@ namespace DiveO.Migrations
                         ProfilePic = c.Binary(),
                         Location = c.String(),
                         Description = c.String(),
-                        Certification = c.String(),
-                        CertDate = c.DateTime(nullable: false),
+                        Certification = c.Int(nullable: false),
+                        CertDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                         Shop_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
@@ -35,13 +35,10 @@ namespace DiveO.Migrations
                         Duration = c.Double(nullable: false),
                         Depth = c.Double(nullable: false),
                         Description = c.String(),
-                        Diver_Id = c.Int(),
                         Shop_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Divers", t => t.Diver_Id)
                 .ForeignKey("dbo.Shops", t => t.Shop_Id)
-                .Index(t => t.Diver_Id)
                 .Index(t => t.Shop_Id);
             
             CreateTable(
@@ -133,7 +130,6 @@ namespace DiveO.Migrations
             DropForeignKey("dbo.Dives", "Shop_Id", "dbo.Shops");
             DropForeignKey("dbo.Divers", "Shop_Id", "dbo.Shops");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.Dives", "Diver_Id", "dbo.Divers");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
@@ -141,7 +137,6 @@ namespace DiveO.Migrations
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropIndex("dbo.Dives", new[] { "Shop_Id" });
-            DropIndex("dbo.Dives", new[] { "Diver_Id" });
             DropIndex("dbo.Divers", new[] { "Shop_Id" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");

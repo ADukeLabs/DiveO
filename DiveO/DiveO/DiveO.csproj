@@ -22,6 +22,7 @@
     <IISExpressUseClassicPipelineMode />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -202,25 +203,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201508200656439_Init.cs" />
-    <Compile Include="Migrations\201508200656439_Init.Designer.cs">
-      <DependentUpon>201508200656439_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510211721312_Enums_Added.cs" />
-    <Compile Include="Migrations\201510211721312_Enums_Added.Designer.cs">
-      <DependentUpon>201510211721312_Enums_Added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510231634276_Cert_Enum.cs" />
-    <Compile Include="Migrations\201510231634276_Cert_Enum.Designer.cs">
-      <DependentUpon>201510231634276_Cert_Enum.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510231644104_Organization_Removed.cs" />
-    <Compile Include="Migrations\201510231644104_Organization_Removed.Designer.cs">
-      <DependentUpon>201510231644104_Organization_Removed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510242139598_CertDate_ChangedTo_datetime2.cs" />
-    <Compile Include="Migrations\201510242139598_CertDate_ChangedTo_datetime2.Designer.cs">
-      <DependentUpon>201510242139598_CertDate_ChangedTo_datetime2.cs</DependentUpon>
+    <Compile Include="Migrations\201511031650472_Init.cs" />
+    <Compile Include="Migrations\201511031650472_Init.Designer.cs">
+      <DependentUpon>201511031650472_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -234,7 +219,7 @@
     <Compile Include="Services\HtmlHelpers\CustomEnumDropDown.cs" />
     <Compile Include="Services\ImageProcessor.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\DiverViewModel.cs" />
+    <Compile Include="Models\DiverViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -321,20 +306,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201508200656439_Init.resx">
-      <DependentUpon>201508200656439_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510211721312_Enums_Added.resx">
-      <DependentUpon>201510211721312_Enums_Added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510231634276_Cert_Enum.resx">
-      <DependentUpon>201510231634276_Cert_Enum.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510231644104_Organization_Removed.resx">
-      <DependentUpon>201510231644104_Organization_Removed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510242139598_CertDate_ChangedTo_datetime2.resx">
-      <DependentUpon>201510242139598_CertDate_ChangedTo_datetime2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511031650472_Init.resx">
+      <DependentUpon>201511031650472_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
