@@ -16,7 +16,6 @@ namespace DiveO.ViewModels
         public string Location { get; set; }
         public string Description { get; set; }
         public string Certification { get; set; }
-        public string CertDate { get; set; }
         public virtual ICollection<Dive> Dives { get; set; }
 
         public DiverViewModel(Diver diver)
@@ -26,7 +25,6 @@ namespace DiveO.ViewModels
             Location = diver.Location;
             Description = diver.Description;
             Certification = diver.Certification.GetDescription();
-            CertDate = diver.CertDate.Date.ToString();
         }
     }
 }

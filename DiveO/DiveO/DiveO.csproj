@@ -207,6 +207,10 @@
     <Compile Include="Migrations\201511031650472_Init.Designer.cs">
       <DependentUpon>201511031650472_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511050307589_CertDate_Removed.cs" />
+    <Compile Include="Migrations\201511050307589_CertDate_Removed.Designer.cs">
+      <DependentUpon>201511050307589_CertDate_Removed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Dive.cs" />
@@ -308,6 +312,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201511031650472_Init.resx">
       <DependentUpon>201511031650472_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511050307589_CertDate_Removed.resx">
+      <DependentUpon>201511050307589_CertDate_Removed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
