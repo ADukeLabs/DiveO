@@ -17,7 +17,6 @@ namespace DiveO.Migrations
                         Location = c.String(),
                         Description = c.String(),
                         Certification = c.Int(nullable: false),
-                        CertDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                         Shop_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
@@ -31,8 +30,8 @@ namespace DiveO.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         DiveSite = c.String(),
                         Date = c.DateTime(nullable: false),
-                        TimeStart = c.DateTime(nullable: false),
-                        Duration = c.Double(nullable: false),
+                        Time = c.String(),
+                        Duration = c.String(),
                         Depth = c.Double(nullable: false),
                         Description = c.String(),
                         Shop_Id = c.Int(),
@@ -40,6 +39,17 @@ namespace DiveO.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Shops", t => t.Shop_Id)
                 .Index(t => t.Shop_Id);
+            
+            CreateTable(
+                "dbo.DivePhotoes",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Dive_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Dives", t => t.Dive_Id)
+                .Index(t => t.Dive_Id);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -130,12 +140,14 @@ namespace DiveO.Migrations
             DropForeignKey("dbo.Dives", "Shop_Id", "dbo.Shops");
             DropForeignKey("dbo.Divers", "Shop_Id", "dbo.Shops");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.DivePhotoes", "Dive_Id", "dbo.Dives");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.DivePhotoes", new[] { "Dive_Id" });
             DropIndex("dbo.Dives", new[] { "Shop_Id" });
             DropIndex("dbo.Divers", new[] { "Shop_Id" });
             DropTable("dbo.AspNetUserLogins");
@@ -144,6 +156,7 @@ namespace DiveO.Migrations
             DropTable("dbo.Shops");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.DivePhotoes");
             DropTable("dbo.Dives");
             DropTable("dbo.Divers");
         }
