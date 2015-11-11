@@ -8,20 +8,22 @@
 
 <div>
     <hr />
-    <div id="DiveDetails">
-            <h3>Dive Site</h3>
+    
+    <div class="DiveDetails">
+            <h4>Dive Site</h4>
             <div>@Html.DisplayFor(model => model.DiveSite)</div>
-            <h3>Map</h3>
+            <h4>Map</h4>
+            @*Map Div for Google Map*@
             <div id="mapDiv"></div>
-            <h3>Date</h3>
+            <h4>Date</h4>
             <div>@Html.DisplayFor(model => model.Date.Date)</div>
-            <h3>Time</h3>
+            <h4>Time</h4>
             <div>@Html.DisplayFor(model => model.Time)</div>
-            <h3>Dive Length</h3>
+            <h4>Dive Length</h4>
             <div>@Html.DisplayFor(model => model.Duration)</div>
-            <h3>Depth</h3>
+            <h4>Depth</h4>
             <div>@Html.DisplayFor(model => model.Depth)</div>
-            <h3>Description</h3>
+            <h4>Description</h4>
             <div>@Html.DisplayFor(model => model.Description)</div>
     </div>
     @*<dl class="dl-horizontal">
