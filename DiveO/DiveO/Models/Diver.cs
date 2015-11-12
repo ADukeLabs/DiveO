@@ -13,5 +13,6 @@ namespace DiveO.Models
         public string Location { get; set; }
         public string Description { get; set; }
         public Certification.CertificationLevel Certification { get; set; }
+        public virtual ICollection<Dive> DiveLog { get; set; }
     }
 }
