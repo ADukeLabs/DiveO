@@ -9,6 +9,7 @@ namespace DiveO.Models
     public class DivePhoto
     {
         public int Id { get; set; }
-        public byte[][] Photos { get; set; }
+        public byte[] Photo { get; set; }
+        public string Description { get; set; }
     }
 }

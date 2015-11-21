@@ -10,6 +10,7 @@ using System.Web.Mvc;
 using DiveO.Models;
 using DiveO.Services;
 using DiveO.ViewModels;
+using Microsoft.AspNet.Identity;
 
 namespace DiveO.Controllers
 {
@@ -35,8 +36,7 @@ namespace DiveO.Controllers
             {
                 return HttpNotFound();
             }
-            DiverViewModel dvm = new DiverViewModel(diver);
-            return View(dvm);
+            return View(diver);
         }
 
         // GET: Divers/Create
@@ -128,6 +128,7 @@ namespace DiveO.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
 
         protected override void Dispose(bool disposing)
         {

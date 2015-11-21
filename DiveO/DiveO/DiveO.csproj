@@ -196,20 +196,24 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DiveController.cs" />
     <Compile Include="Controllers\DiversController.cs" />
-    <Compile Include="Controllers\DivesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511071850462_Init.cs" />
-    <Compile Include="Migrations\201511071850462_Init.Designer.cs">
-      <DependentUpon>201511071850462_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201511180154027_Init.cs" />
+    <Compile Include="Migrations\201511180154027_Init.Designer.cs">
+      <DependentUpon>201511180154027_Init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511112027059_DiveCollection_Added.cs" />
-    <Compile Include="Migrations\201511112027059_DiveCollection_Added.Designer.cs">
-      <DependentUpon>201511112027059_DiveCollection_Added.cs</DependentUpon>
+    <Compile Include="Migrations\201511202018300_models_updated.cs" />
+    <Compile Include="Migrations\201511202018300_models_updated.Designer.cs">
+      <DependentUpon>201511202018300_models_updated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511202037215_Dive_ForeignKey_Changed.cs" />
+    <Compile Include="Migrations\201511202037215_Dive_ForeignKey_Changed.Designer.cs">
+      <DependentUpon>201511202037215_Dive_ForeignKey_Changed.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -298,11 +302,12 @@
     <Content Include="Views\Divers\Details.cshtml" />
     <Content Include="Views\Divers\Edit.cshtml" />
     <Content Include="Views\Divers\Index.cshtml" />
-    <Content Include="Views\Dives\Create.cshtml" />
-    <Content Include="Views\Dives\Delete.cshtml" />
-    <Content Include="Views\Dives\Details.cshtml" />
-    <Content Include="Views\Dives\Edit.cshtml" />
-    <Content Include="Views\Dives\Index.cshtml" />
+    <Content Include="Views\Divers\AddDive.cshtml" />
+    <Content Include="Views\Dive\Create.cshtml" />
+    <Content Include="Views\Dive\Delete.cshtml" />
+    <Content Include="Views\Dive\Details.cshtml" />
+    <Content Include="Views\Dive\Edit.cshtml" />
+    <Content Include="Views\Dive\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -312,11 +317,14 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201511071850462_Init.resx">
-      <DependentUpon>201511071850462_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511180154027_Init.resx">
+      <DependentUpon>201511180154027_Init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511112027059_DiveCollection_Added.resx">
-      <DependentUpon>201511112027059_DiveCollection_Added.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511202018300_models_updated.resx">
+      <DependentUpon>201511202018300_models_updated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511202037215_Dive_ForeignKey_Changed.resx">
+      <DependentUpon>201511202037215_Dive_ForeignKey_Changed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
