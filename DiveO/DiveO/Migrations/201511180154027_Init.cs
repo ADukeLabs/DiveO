@@ -17,11 +17,8 @@ namespace DiveO.Migrations
                         Location = c.String(),
                         Description = c.String(),
                         Certification = c.Int(nullable: false),
-                        Shop_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Shops", t => t.Shop_Id)
-                .Index(t => t.Shop_Id);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Dives",
@@ -30,26 +27,15 @@ namespace DiveO.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         DiveSite = c.String(),
                         Date = c.DateTime(nullable: false),
-                        Time = c.String(),
+                        Time = c.DateTime(nullable: false),
                         Duration = c.String(),
-                        Depth = c.Double(nullable: false),
+                        Depth = c.String(),
                         Description = c.String(),
-                        Shop_Id = c.Int(),
+                        Diver_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Shops", t => t.Shop_Id)
-                .Index(t => t.Shop_Id);
-            
-            CreateTable(
-                "dbo.DivePhotoes",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Dive_Id = c.Int(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Dives", t => t.Dive_Id)
-                .Index(t => t.Dive_Id);
+                .ForeignKey("dbo.Divers", t => t.Diver_Id)
+                .Index(t => t.Diver_Id);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -73,17 +59,6 @@ namespace DiveO.Migrations
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId)
                 .Index(t => t.RoleId);
-            
-            CreateTable(
-                "dbo.Shops",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        Address = c.String(),
-                        Description = c.String(),
-                    })
-                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.AspNetUsers",
@@ -137,26 +112,20 @@ namespace DiveO.Migrations
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
-            DropForeignKey("dbo.Dives", "Shop_Id", "dbo.Shops");
-            DropForeignKey("dbo.Divers", "Shop_Id", "dbo.Shops");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.DivePhotoes", "Dive_Id", "dbo.Dives");
+            DropForeignKey("dbo.Dives", "Diver_Id", "dbo.Divers");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
-            DropIndex("dbo.DivePhotoes", new[] { "Dive_Id" });
-            DropIndex("dbo.Dives", new[] { "Shop_Id" });
-            DropIndex("dbo.Divers", new[] { "Shop_Id" });
+            DropIndex("dbo.Dives", new[] { "Diver_Id" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
-            DropTable("dbo.Shops");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
-            DropTable("dbo.DivePhotoes");
             DropTable("dbo.Dives");
             DropTable("dbo.Divers");
         }

@@ -1,4 +1,4 @@
-﻿@model DiveO.ViewModels.DiverViewModel
+﻿@model DiveO.Models.Diver
 
 @{
     ViewBag.Title = "Details";
@@ -11,7 +11,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Name)
+            <h3>Name</h3>
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ProfilePic)
+            <h3>Profile Pic</h3>
         </dt>
 
         <dd>
@@ -58,6 +58,7 @@
     </dl>
 </div>
 <p>
-    @*@Html.ActionLink("Edit", "Edit", new { id = .Id }) |*@
+    @Html.ActionLink("Add A Dive", "Create", "Dive", new { id = Model.Id })
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

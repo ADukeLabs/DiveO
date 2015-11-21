@@ -3,6 +3,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace DiveO.Models
 {
@@ -16,6 +18,7 @@ namespace DiveO.Models
             // Add custom user claims here
             return userIdentity;
         }
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -30,8 +33,7 @@ namespace DiveO.Models
             return new ApplicationDbContext();
         }
 
-        public virtual DbSet<Diver> Divers { get; set; }
-        public virtual DbSet<Dive> Dives { get; set; }
-        public virtual DbSet<Shop> Shops { get; set; } 
+        public DbSet<Diver> Divers { get; set; }
+        public DbSet<Dive> Dives { get; set; }
     }
 }

@@ -1,22 +1,26 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using DiveO.Models;
 
 namespace DiveO.Controllers
 {
-    public class DivesController : Controller
+    public class DiveController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Dives
+        // GET: Dive
         public ActionResult Index()
         {
             return View(db.Dives.ToList());
         }
 
-        // GET: Dives/Details/5
+        // GET: Dive/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -31,21 +35,23 @@ namespace DiveO.Controllers
             return View(dive);
         }
 
-        // GET: Dives/Create
+        // GET: Dive/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Dives/Create
+        // POST: Dive/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,DiveSite,Date,TimeStart,Duration,Depth,Description")] Dive dive)
+        public ActionResult Create([Bind(Include = "Id,DiveSite,Date,Time,Duration,Depth,Description")] Dive dive, int? id)
         {
             if (ModelState.IsValid)
             {
+                var diverId = db.Divers.Find(id);
+                dive.Diver = diverId;
                 db.Dives.Add(dive);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -54,7 +60,7 @@ namespace DiveO.Controllers
             return View(dive);
         }
 
-        // GET: Dives/Edit/5
+        // GET: Dive/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -69,12 +75,12 @@ namespace DiveO.Controllers
             return View(dive);
         }
 
-        // POST: Dives/Edit/5
+        // POST: Dive/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,DiveSite,Date,TimeStart,Duration,Depth,Description")] Dive dive)
+        public ActionResult Edit([Bind(Include = "Id,DiveSite,Date,Time,Duration,Depth,Description")] Dive dive)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +91,7 @@ namespace DiveO.Controllers
             return View(dive);
         }
 
-        // GET: Dives/Delete/5
+        // GET: Dive/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -100,7 +106,7 @@ namespace DiveO.Controllers
             return View(dive);
         }
 
-        // POST: Dives/Delete/5
+        // POST: Dive/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
