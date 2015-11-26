@@ -13,7 +13,7 @@ namespace DiveO.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201511180154027_Init"; }
+            get { return "201511260107034_Init"; }
         }
         
         string IMigrationMetadata.Source

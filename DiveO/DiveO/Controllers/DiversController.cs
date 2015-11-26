@@ -11,20 +11,29 @@ using DiveO.Models;
 using DiveO.Services;
 using DiveO.ViewModels;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace DiveO.Controllers
 {
     public class DiversController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        protected UserManager<ApplicationUser> UserManager { get; set; }
+
+        public DiversController()
+        {
+            UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+        }
 
         // GET: Divers
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.Divers.ToList());
         }
 
         // GET: Divers/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -50,6 +59,7 @@ namespace DiveO.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "Id,Name,ProfilePic,Location,Description,Certification,CertDate")] Diver diver, HttpPostedFileBase file)
         {
             if (file != null)
@@ -59,6 +69,8 @@ namespace DiveO.Controllers
 
             if (ModelState.IsValid)
             {
+                var id = User.Identity.GetUserId();
+                diver.ApplicationUser = UserManager.FindById(id);
                 db.Divers.Add(diver);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -17,14 +17,15 @@ namespace DiveO.ViewModels
         public string Description { get; set; }
         public string Certification { get; set; }
         public virtual ICollection<Dive> Dives { get; set; }
+        public IEnumerable<ApplicationUser> Friends { get; set; }
 
-        public DiverViewModel(Diver diver)
-        {
-            Name = diver.Name;
-            ProfilePic = diver.ProfilePic;
-            Location = diver.Location;
-            Description = diver.Description;
-            Certification = diver.Certification.GetDescription();
-        }
+        //public DiverViewModel(Diver diver)
+        //{
+        //    Name = diver.Name;
+        //    ProfilePic = diver.ProfilePic;
+        //    Location = diver.Location;
+        //    Description = diver.Description;
+        //    Certification = diver.Certification.GetDescription();
+        //}
     }
 }
