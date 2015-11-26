@@ -11,7 +11,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            <h3>Name</h3>
+            <h4>Name</h4>
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            <h3>Profile Pic</h3>
+            <h4>Profile Pic</h4>
         </dt>
 
         <dd>
@@ -32,11 +32,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Location)
+            @Html.DisplayNameFor(model => model.HomeBase)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Location)
+            @Html.DisplayFor(model => model.HomeBase)
         </dd>
 
         <dt>
@@ -55,19 +55,10 @@
             @Html.DisplayFor(model => model.Certification)
         </dd>
     </dl>
-    @*<table id="Dive Log">
-        @foreach(var item in Model.DiveLog)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(ModelItem => item.DiveSite)
-                </td>
-
-            </tr>
-        }
-    </table>*@
+   
 </div>
 <p>
+    @Html.ActionLink("Dive Log", "Index", "Dive")
     @Html.ActionLink("Add A Dive", "Create", "Dive", new { id = Model.Id }, null) |
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")

@@ -55,9 +55,6 @@ namespace DiveO.Controllers
         {
             if (ModelState.IsValid)
             {
-
-                //var id = User.Identity.GetUserId();
-                //dive.Diver.ApplicationUser = UserManager.FindById(id);
                 Diver diver = db.Divers.Find(id);
                 dive.Diver = diver;
                 db.Dives.Add(dive);
