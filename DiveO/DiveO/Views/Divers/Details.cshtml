@@ -68,7 +68,7 @@
     </table>*@
 </div>
 <p>
-    @Html.ActionLink("Add A Dive", "Create", "Dive") |
+    @Html.ActionLink("Add A Dive", "Create", "Dive", new { id = Model.Id }, null) |
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

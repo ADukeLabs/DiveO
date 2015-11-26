@@ -51,12 +51,15 @@ namespace DiveO.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult Create([Bind(Include = "Id,DiveSite,Date,Time,Duration,Depth,Description")] Dive dive)
+        public ActionResult Create([Bind(Include = "Id,DiveSite,Date,Time,Duration,Depth,Description")] Dive dive, int? id)
         {
             if (ModelState.IsValid)
             {
-                var id = User.Identity.GetUserId();
-                dive.Diver.ApplicationUser = UserManager.FindById(id);
+
+                //var id = User.Identity.GetUserId();
+                //dive.Diver.ApplicationUser = UserManager.FindById(id);
+                Diver diver = db.Divers.Find(id);
+                dive.Diver = diver;
                 db.Dives.Add(dive);
                 db.SaveChanges();
                 return RedirectToAction("Index");
