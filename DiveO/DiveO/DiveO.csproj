@@ -203,17 +203,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511180154027_Init.cs" />
-    <Compile Include="Migrations\201511180154027_Init.Designer.cs">
-      <DependentUpon>201511180154027_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511202018300_models_updated.cs" />
-    <Compile Include="Migrations\201511202018300_models_updated.Designer.cs">
-      <DependentUpon>201511202018300_models_updated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511202037215_Dive_ForeignKey_Changed.cs" />
-    <Compile Include="Migrations\201511202037215_Dive_ForeignKey_Changed.Designer.cs">
-      <DependentUpon>201511202037215_Dive_ForeignKey_Changed.cs</DependentUpon>
+    <Compile Include="Migrations\201511260107034_Init.cs" />
+    <Compile Include="Migrations\201511260107034_Init.Designer.cs">
+      <DependentUpon>201511260107034_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -302,7 +294,6 @@
     <Content Include="Views\Divers\Details.cshtml" />
     <Content Include="Views\Divers\Edit.cshtml" />
     <Content Include="Views\Divers\Index.cshtml" />
-    <Content Include="Views\Divers\AddDive.cshtml" />
     <Content Include="Views\Dive\Create.cshtml" />
     <Content Include="Views\Dive\Delete.cshtml" />
     <Content Include="Views\Dive\Details.cshtml" />
@@ -317,14 +308,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201511180154027_Init.resx">
-      <DependentUpon>201511180154027_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511202018300_models_updated.resx">
-      <DependentUpon>201511202018300_models_updated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511202037215_Dive_ForeignKey_Changed.resx">
-      <DependentUpon>201511202037215_Dive_ForeignKey_Changed.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511260107034_Init.resx">
+      <DependentUpon>201511260107034_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

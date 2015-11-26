@@ -7,19 +7,23 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DiveO.Models;
+using Microsoft.AspNet.Identity;
 
 namespace DiveO.Controllers
 {
     public class DiveController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        protected UserManager<ApplicationUser> UserManager { get; set; }
 
+        [Authorize]
         // GET: Dive
         public ActionResult Index()
         {
             return View(db.Dives.ToList());
         }
 
+        [Authorize]
         // GET: Dive/Details/5
         public ActionResult Details(int? id)
         {
@@ -46,12 +50,16 @@ namespace DiveO.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "Id,DiveSite,Date,Time,Duration,Depth,Description")] Dive dive, int? id)
         {
             if (ModelState.IsValid)
             {
-                var diverId = db.Divers.Find(id);
-                dive.Diver = diverId;
+
+                //var id = User.Identity.GetUserId();
+                //dive.Diver.ApplicationUser = UserManager.FindById(id);
+                Diver diver = db.Divers.Find(id);
+                dive.Diver = diver;
                 db.Dives.Add(dive);
                 db.SaveChanges();
                 return RedirectToAction("Index");
