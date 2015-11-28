@@ -51,7 +51,7 @@ namespace DiveO.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult Create([Bind(Include = "Id,DiveSite,Date,Time,Duration,Depth,Description")] Dive dive, int? id)
+        public ActionResult Create([Bind(Include = "Id,DiveSite,Location,DateTime,Duration,Depth,Description")] Dive dive, int? id)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace DiveO.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,DiveSite,Date,Time,Duration,Depth,Description")] Dive dive)
+        public ActionResult Edit([Bind(Include = "Id,DiveSite,Location,DateTime,Duration,Depth,Description")] Dive dive)
         {
             if (ModelState.IsValid)
             {
