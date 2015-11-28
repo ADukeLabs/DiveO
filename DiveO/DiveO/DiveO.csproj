@@ -207,6 +207,10 @@
     <Compile Include="Migrations\201511260107034_Init.Designer.cs">
       <DependentUpon>201511260107034_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511261532402_Diver_Dive_Updated.cs" />
+    <Compile Include="Migrations\201511261532402_Diver_Dive_Updated.Designer.cs">
+      <DependentUpon>201511261532402_Diver_Dive_Updated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Dive.cs" />
@@ -310,6 +314,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201511260107034_Init.resx">
       <DependentUpon>201511260107034_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511261532402_Diver_Dive_Updated.resx">
+      <DependentUpon>201511261532402_Diver_Dive_Updated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

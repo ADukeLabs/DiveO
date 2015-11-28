@@ -10,7 +10,7 @@ namespace DiveO.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public byte[] ProfilePic { get; set; }
-        public string Location { get; set; }
+        public string HomeBase { get; set; }
         public string Description { get; set; }
         public Certification.CertificationLevel Certification { get; set; }
         public virtual ICollection<Dive> DiveLog { get; set; }
