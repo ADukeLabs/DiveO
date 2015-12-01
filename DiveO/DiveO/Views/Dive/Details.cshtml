@@ -19,19 +19,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Date)
+            <h5>Date</h5>
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Date)
+            @Html.DisplayFor(model => model.DateTime)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Time)
+            <h5>Time</h5>
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Time)
+            @Html.DisplayFor(model => model.DateTime.Hour)  
         </dd>
 
         <dt>
@@ -58,7 +58,24 @@
             @Html.DisplayFor(model => model.Description)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Photos)
+        </dt>
+
     </dl>
+    <h5>Photos</h5>
+    @foreach (var item in Model.Photos)
+    {
+        <tr>
+            <td>
+                @{
+                    var base64 = Convert.ToBase64String(item);
+                    var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                }
+                <img src="@imgSrc" width="50" height="50"/>
+            </td>
+        </tr>
+    }
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
