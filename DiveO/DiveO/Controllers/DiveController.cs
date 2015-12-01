@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DiveO.Models;
+using DiveO.Services;
 using Microsoft.AspNet.Identity;
 
 namespace DiveO.Controllers
@@ -51,8 +52,14 @@ namespace DiveO.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult Create([Bind(Include = "Id,DiveSite,Location,DateTime,Duration,Depth,Description")] Dive dive, int? id)
+        public ActionResult Create([Bind(Include = "Id,DiveSite,Location,DateTime,Duration,Depth,Description")] Dive dive, HttpPostedFileBase file, int? id)
         {
+            if (file != null)
+            {
+                var photo = new ImageProcessor().ImageToByteArray(file);
+                dive.Photos.Add(photo);
+            }
+
             if (ModelState.IsValid)
             {
                 Diver diver = db.Divers.Find(id);
@@ -121,6 +128,8 @@ namespace DiveO.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
 
         protected override void Dispose(bool disposing)
         {

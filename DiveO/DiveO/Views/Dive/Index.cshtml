@@ -15,10 +15,10 @@
             @Html.DisplayNameFor(model => model.DiveSite)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Date)
+            @Html.DisplayNameFor(model => model.DateTime.Date)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Time)
+            @Html.DisplayNameFor(model => model.DateTime.Hour)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Duration)
@@ -38,10 +38,10 @@
             @Html.DisplayFor(modelItem => item.DiveSite)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Date)
+            @Html.DisplayFor(modelItem => item.DateTime.Date)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Time)
+            @Html.DisplayFor(modelItem => item.DateTime.Hour)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Duration)
