@@ -60,26 +60,6 @@ namespace DiveO.Migrations
                 .Index(t => t.UserId);
             
             CreateTable(
-                "dbo.Dives",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        DiveSite = c.String(),
-                        Location = c.String(),
-                        DateTime = c.DateTime(nullable: false),
-                        Duration = c.String(),
-                        Depth = c.String(),
-                        Description = c.String(),
-                        Diver_Id = c.Int(),
-                        ApplicationUser_Id = c.String(maxLength: 128),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Divers", t => t.Diver_Id)
-                .ForeignKey("dbo.AspNetUsers", t => t.ApplicationUser_Id)
-                .Index(t => t.Diver_Id)
-                .Index(t => t.ApplicationUser_Id);
-            
-            CreateTable(
                 "dbo.AspNetUserLogins",
                 c => new
                     {
@@ -105,6 +85,23 @@ namespace DiveO.Migrations
                 .Index(t => t.RoleId);
             
             CreateTable(
+                "dbo.Dives",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        DiveSite = c.String(),
+                        Location = c.String(),
+                        DateTime = c.DateTime(nullable: false),
+                        Duration = c.String(),
+                        Depth = c.String(),
+                        Description = c.String(),
+                        Diver_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Divers", t => t.Diver_Id)
+                .Index(t => t.Diver_Id);
+            
+            CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                     {
@@ -119,27 +116,25 @@ namespace DiveO.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.Dives", "Diver_Id", "dbo.Divers");
             DropForeignKey("dbo.Divers", "ApplicationUser_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUsers", "ApplicationUser_Id", "dbo.AspNetUsers");
-            DropForeignKey("dbo.Dives", "ApplicationUser_Id", "dbo.AspNetUsers");
-            DropForeignKey("dbo.Dives", "Diver_Id", "dbo.Divers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.Dives", new[] { "Diver_Id" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
-            DropIndex("dbo.Dives", new[] { "ApplicationUser_Id" });
-            DropIndex("dbo.Dives", new[] { "Diver_Id" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.Divers", new[] { "ApplicationUser_Id" });
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Dives");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetUserLogins");
-            DropTable("dbo.Dives");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.Divers");

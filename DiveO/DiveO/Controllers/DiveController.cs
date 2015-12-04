@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using DiveO.Models;
 using DiveO.Services;
+using DiveO.ViewModels;
 using Microsoft.AspNet.Identity;
 
 namespace DiveO.Controllers
@@ -33,11 +34,20 @@ namespace DiveO.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Dive dive = db.Dives.Find(id);
+            DiveViewModel dvm = new DiveViewModel();
             if (dive == null)
             {
                 return HttpNotFound();
             }
-            return View(dive);
+            dvm.DiveSite = dive.DiveSite;
+            dvm.Location = dive.Location;
+            dvm.Date = dive.DateTime;
+            dvm.Time = dive.DateTime;
+            dvm.Depth = dive.Depth;
+            dvm.Duration = dive.Duration;
+            dvm.Description = dive.Description;
+            dvm.Photos = dive.Photos;
+            return View(dvm);
         }
 
         // GET: Dive/Create
