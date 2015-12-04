@@ -220,7 +220,7 @@
     <Compile Include="Services\HtmlHelpers\CustomEnumDropDown.cs" />
     <Compile Include="Services\ImageProcessor.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Models\DiverViewModel.cs" />
+    <Compile Include="ViewModels\DiverViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -268,7 +268,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Feed.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
