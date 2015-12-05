@@ -207,6 +207,10 @@
     <Compile Include="Migrations\201512042318046_Init.Designer.cs">
       <DependentUpon>201512042318046_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512052106407_HomeBase_Now_Location.cs" />
+    <Compile Include="Migrations\201512052106407_HomeBase_Now_Location.Designer.cs">
+      <DependentUpon>201512052106407_HomeBase_Now_Location.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Dive.cs" />
@@ -311,6 +315,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201512042318046_Init.resx">
       <DependentUpon>201512042318046_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512052106407_HomeBase_Now_Location.resx">
+      <DependentUpon>201512052106407_HomeBase_Now_Location.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -24,9 +24,7 @@ namespace DiveO.Controllers
         public ActionResult Feed()
         {
             DiverViewModel dvm = new DiverViewModel();
-            ApplicationUser activeUser = UserManager.FindById(User.Identity.GetUserId());
             Diver diver = new Diver();
-            diver.ApplicationUser = activeUser;
             dvm.Name = diver.Name;
             dvm.ProfilePic = diver.ProfilePic;
             dvm.Dives = diver.DiveLog;

@@ -1,3 +1,6 @@
+using DiveO.Models;
+using DiveO.Models.Model_Attributes;
+
 namespace DiveO.Migrations
 {
     using System;
@@ -26,6 +29,10 @@ namespace DiveO.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            //context.Divers.AddOrUpdate(
+            //    d => d.Name,
+            //    new Diver { Id = 1, Name = "Diver Dan", HomeBase = "Key Largo, Florida", Description = "The legendary scuba diver", Certification = Certification.CertificationLevel.PadiDiveMaster}
+            //    );
         }
     }
 }
