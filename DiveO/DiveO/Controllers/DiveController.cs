@@ -16,16 +16,16 @@ namespace DiveO.Controllers
     public class DiveController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        protected UserManager<ApplicationUser> UserManager { get; set; }
+        //protected UserManager<ApplicationUser> UserManager { get; set; }
 
-        [Authorize]
+        //[Authorize]
         // GET: Dive
         public ActionResult Index()
         {
             return View(db.Dives.ToList());
         }
 
-        [Authorize]
+        //[Authorize]
         // GET: Dive/Details/5
         public ActionResult Details(int? id)
         {
@@ -61,7 +61,7 @@ namespace DiveO.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
+        //[Authorize]
         public ActionResult Create([Bind(Include = "Id,DiveSite,Location,DateTime,Duration,Depth,Description")] Dive dive, int? id)
         {
 
