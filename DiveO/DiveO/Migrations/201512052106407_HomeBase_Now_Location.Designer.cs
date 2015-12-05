@@ -7,13 +7,13 @@ namespace DiveO.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Init : IMigrationMetadata
+    public sealed partial class HomeBase_Now_Location : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Init));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(HomeBase_Now_Location));
         
         string IMigrationMetadata.Id
         {
-            get { return "201512012214047_Init"; }
+            get { return "201512052106407_HomeBase_Now_Location"; }
         }
         
         string IMigrationMetadata.Source

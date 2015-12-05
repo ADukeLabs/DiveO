@@ -203,9 +203,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201512012214047_Init.cs" />
-    <Compile Include="Migrations\201512012214047_Init.Designer.cs">
-      <DependentUpon>201512012214047_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201512042318046_Init.cs" />
+    <Compile Include="Migrations\201512042318046_Init.Designer.cs">
+      <DependentUpon>201512042318046_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512052106407_HomeBase_Now_Location.cs" />
+    <Compile Include="Migrations\201512052106407_HomeBase_Now_Location.Designer.cs">
+      <DependentUpon>201512052106407_HomeBase_Now_Location.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -220,7 +224,8 @@
     <Compile Include="Services\HtmlHelpers\CustomEnumDropDown.cs" />
     <Compile Include="Services\ImageProcessor.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Models\DiverViewModel.cs" />
+    <Compile Include="ViewModels\DiverViewModel.cs" />
+    <Compile Include="ViewModels\DiveViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -268,7 +273,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Feed.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -308,8 +313,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201512012214047_Init.resx">
-      <DependentUpon>201512012214047_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512042318046_Init.resx">
+      <DependentUpon>201512042318046_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512052106407_HomeBase_Now_Location.resx">
+      <DependentUpon>201512052106407_HomeBase_Now_Location.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
