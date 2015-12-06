@@ -1,4 +1,6 @@
-﻿@model DiveO.ViewModels.DiverViewModel
+﻿@using DiveO.Services
+@using DiveO.ViewModels
+@model DiveO.ViewModels.DiverViewModel
 
 @{
     ViewBag.Title = "Home Page";
@@ -10,11 +12,20 @@
     <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
     <h2>Dive Feed</h2>
     <div id="feed">
-        <p>@Html.DisplayFor(model => model.ProfilePic)</p>
-        <p>@Html.DisplayFor(model => model.Name)</p>
-        <div>
-            <p>@Html.DisplayFor(model => model.Dives.FirstOrDefault())</p>
-        </div>
+        @foreach (var item in Model.DiverList)
+        {
+            <tr>
+                <td>
+                    <div>
+                        <img src=@ByteToImage.ConvertToImage(item.ProfilePic) width="50" height="50"/>
+                        <p>@item.Name</p>
+                    </div>
+                    <div>
+                        <p>Completed a new dive: @item.DiveLog.FirstOrDefault().DiveSite</p> 
+                    </div>
+                </td>
+            </tr>
+        }
     </div>
     
 </div>
