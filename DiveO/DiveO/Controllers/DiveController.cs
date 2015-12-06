@@ -62,13 +62,15 @@ namespace DiveO.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         //[Authorize]
-        public ActionResult Create([Bind(Include = "Id,DiveSite,Location,DateTime,Duration,Depth,Description")] Dive dive, int? id)
+        public ActionResult Create([Bind(Include = "Id,DiveSite,Location,DateTime,Duration,Depth,Description")] Dive dive, int? id, IEnumerable<HttpPostedFileBase> files)
         {
-
             if (ModelState.IsValid)
             {
                 Diver diver = db.Divers.Find(id);
                 dive.Diver = diver;
+                if (files != null)
+                    foreach (var photo in files.Select(i => new ImageProcessor().ImageToByteArray(i)))
+                dive.Photos.Add(photo);
                 db.Dives.Add(dive);
                 db.SaveChanges();
                 return RedirectToAction("Index");

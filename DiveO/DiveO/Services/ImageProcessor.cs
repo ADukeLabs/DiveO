@@ -16,7 +16,6 @@ namespace DiveO.Services
                 file.InputStream.CopyTo(ms);
                 result = ms.GetBuffer();
             }
-
             return result;
         }
     }
