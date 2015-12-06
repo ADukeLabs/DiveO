@@ -16,7 +16,7 @@ namespace DiveO.ViewModels
         public string HomeBase { get; set; }
         public string Description { get; set; }
         public string Certification { get; set; }
-        public virtual ICollection<Dive> Dives { get; set; }
-        public IEnumerable<ApplicationUser> Friends { get; set; }
+        public IEnumerable<Diver> DiverList { get; set; } 
+        //public IEnumerable<ApplicationUser> Friends { get; set; }
     }
 }

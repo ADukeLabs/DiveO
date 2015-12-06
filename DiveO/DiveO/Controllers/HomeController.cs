@@ -24,10 +24,7 @@ namespace DiveO.Controllers
         public ActionResult Feed()
         {
             DiverViewModel dvm = new DiverViewModel();
-            Diver diver = new Diver();
-            dvm.Name = diver.Name;
-            dvm.ProfilePic = diver.ProfilePic;
-            dvm.Dives = diver.DiveLog;
+            dvm.DiverList = db.Divers.ToList();
             return View(dvm);
         }
 
