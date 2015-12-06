@@ -225,6 +225,7 @@
     <Compile Include="Models\Model Attributes\Certification.cs" />
     <Compile Include="Models\Shop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ByteToImage.cs" />
     <Compile Include="Services\HtmlHelpers\CustomEnumDropDown.cs" />
     <Compile Include="Services\ImageProcessor.cs" />
     <Compile Include="Startup.cs" />
