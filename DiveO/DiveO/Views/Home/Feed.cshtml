@@ -18,10 +18,14 @@
                 <td>
                     <div>
                         <img src=@ByteToImage.ConvertToImage(item.ProfilePic) width="50" height="50"/>
-                        <p>@item.Name</p>
+                        <h4>@item.Name</h4>
                     </div>
                     <div>
-                        <p>Completed a new dive: @item.DiveLog.FirstOrDefault().DiveSite</p> 
+                        @foreach (Dive dive in item.DiveLog)
+                        {
+                            <p>Completed a new dive: @dive.DiveSite</p>
+                            <p>@dive.Location</p>
+                        }
                     </div>
                 </td>
             </tr>
