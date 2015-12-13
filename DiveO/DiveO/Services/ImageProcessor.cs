@@ -19,7 +19,7 @@ namespace DiveO.Services
             return result;
         }
 
-        public static object ByteToImage(byte[] img)
+        public object ByteToImage(byte[] img)
         {
             var base64 = Convert.ToBase64String(img);
             var imgSrc = String.Format("data:image/gif;base64,{0}", base64);

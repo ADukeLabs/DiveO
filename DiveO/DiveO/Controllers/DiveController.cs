@@ -35,18 +35,11 @@ namespace DiveO.Controllers
             }
             Dive dive = db.Dives.Find(id);
             DiveViewModel dvm = new DiveViewModel();
+            dvm.Dive = dive;
             if (dive == null)
             {
                 return HttpNotFound();
             }
-            dvm.DiveSite = dive.DiveSite;
-            dvm.Location = dive.Location;
-            dvm.Date = dive.DateTime;
-            dvm.Time = dive.DateTime;
-            dvm.Depth = dive.Depth;
-            dvm.Duration = dive.Duration;
-            dvm.Description = dive.Description;
-            dvm.Photos = dive.Photos;
             return View(dvm);
         }
 
@@ -70,13 +63,8 @@ namespace DiveO.Controllers
                 dive.Diver = diver;
                 dive.Photos = new List<byte[]>();
                 if (files != null)
-                {
-                    foreach (var i in files)
-                    {
-                        var photo = new ImageProcessor().ImageToByteArray(i);
+                    foreach (var photo in files.Select(i => new ImageProcessor().ImageToByteArray(i)))
                         dive.Photos.Add(photo);
-                    }
-                }
                 db.Dives.Add(dive);
                 db.SaveChanges();
                 return RedirectToAction("Index");

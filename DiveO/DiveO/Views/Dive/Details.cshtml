@@ -1,4 +1,5 @@
-﻿@model DiveO.ViewModels.DiveViewModel
+﻿@using DiveO.Services
+@model DiveO.ViewModels.DiveViewModel
 
 @{
     ViewBag.Title = "Details";
@@ -11,11 +12,11 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.DiveSite)
+            @Html.DisplayNameFor(model => model.Dive.DiveSite)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DiveSite)
+            @Html.DisplayFor(model => model.Dive.Location)
         </dd>
 
         <dt>
@@ -23,7 +24,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Date)
+            @Html.DisplayFor(model => model.Dive.DateTime.Date)
         </dd>
 
         <dt>
@@ -31,48 +32,47 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Time)  
+            @Html.DisplayFor(model => model.Dive.DateTime.Hour)  
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Duration)
+            @Html.DisplayNameFor(model => model.Dive.Duration)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Duration)
+            @Html.DisplayFor(model => model.Dive.Duration)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Depth)
+            @Html.DisplayNameFor(model => model.Dive.Depth)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Depth)
+            @Html.DisplayFor(model => model.Dive.Depth)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.Dive.Description)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Description)
+            @Html.DisplayFor(model => model.Dive.Description)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Photos)
+            @Html.DisplayNameFor(model => model.Dive.Photos)
         </dt>
 
     </dl>
     <h5>Photos</h5>
-    @foreach (var item in Model.Photos)
+    @foreach (var item in Model.Dive.Photos)
     {
         <tr>
             <td>
                 @{
-                    var base64 = Convert.ToBase64String(item);
-                    var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                    var img = new ImageProcessor().ByteToImage(item);
                 }
-                <img src="@imgSrc" width="50" height="50"/>
+                <img src="@img" width="50" height="50"/>
             </td>
         </tr>
     }
