@@ -14,6 +14,6 @@ namespace DiveO.ViewModels
         public string Duration { get; set; }
         public string Depth { get; set; }
         public string Description { get; set; }
-        public virtual ICollection<byte[]> Photos { get; set; }
+        public List<byte[]> Photos { get; set; }
     }
 }
