@@ -231,6 +231,10 @@
     <Compile Include="Migrations\201512131908346_PhotoList_NotVirtual.Designer.cs">
       <DependentUpon>201512131908346_PhotoList_NotVirtual.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512281753050_PhotoList_Virtual.cs" />
+    <Compile Include="Migrations\201512281753050_PhotoList_Virtual.Designer.cs">
+      <DependentUpon>201512281753050_PhotoList_Virtual.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Dive.cs" />
@@ -353,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512131908346_PhotoList_NotVirtual.resx">
       <DependentUpon>201512131908346_PhotoList_NotVirtual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512281753050_PhotoList_Virtual.resx">
+      <DependentUpon>201512281753050_PhotoList_Virtual.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

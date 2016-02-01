@@ -15,7 +15,7 @@ namespace DiveO.Models
         public string Duration { get; set; }
         public string Depth { get; set; }
         public string Description { get; set; }
-        public List<byte[]> Photos { get; set; }
+        public virtual List<byte[]> Photos { get; set; }
         public virtual Diver Diver { get; set; }
     }
 }

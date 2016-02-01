@@ -55,7 +55,7 @@ namespace DiveO.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         //[Authorize]
-        public ActionResult Create([Bind(Include = "Id,DiveSite,Location,DateTime,Duration,Depth,Description")] Dive dive, int? id, ICollection<HttpPostedFileBase> files)
+        public ActionResult Create([Bind(Include = "Id,DiveSite,Location,DateTime,Duration,Depth,Description")] Dive dive, int? id, IEnumerable<HttpPostedFileBase> files)
         {
             if (ModelState.IsValid)
             {
