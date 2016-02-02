@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections;
 using System.Collections.Generic;
+using DiveO.Models.Model_Attributes;
 
 namespace DiveO.Models
 {
@@ -40,5 +41,6 @@ namespace DiveO.Models
 
         public DbSet<Diver> Divers { get; set; }
         public DbSet<Dive> Dives { get; set; }
+        public DbSet<Photo> DivePhotos { get; set; }
     }
 }

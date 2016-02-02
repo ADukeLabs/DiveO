@@ -19,12 +19,12 @@ namespace DiveO.Services
             return result;
         }
 
-        public object ByteToImage(byte[] img)
-        {
-            var base64 = Convert.ToBase64String(img);
-            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
-            return imgSrc;
-        }
+        //public object ByteToImage(byte[] img)
+        //{
+        //    var base64 = Convert.ToBase64String(img);
+        //    var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+        //    return imgSrc;
+        //}
 
         //public List<byte[]> ImageCollection(HttpPostedFileBase file)
         //{

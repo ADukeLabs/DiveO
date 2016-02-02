@@ -10,6 +10,7 @@ using DiveO.Models;
 using DiveO.Services;
 using DiveO.ViewModels;
 using Microsoft.AspNet.Identity;
+using DiveO.Models.Model_Attributes;
 
 namespace DiveO.Controllers
 {
@@ -61,20 +62,26 @@ namespace DiveO.Controllers
             {
                 Diver diver = db.Divers.Find(id);
                 dive.Diver = diver;
-                dive.Photos = new List<byte[]>();
                 if (files != null)
-                    foreach (var photo in files.Select(i => new ImageProcessor().ImageToByteArray(i)))
-                        dive.Photos.Add(photo);
+                {
+                    foreach(var p in files)
+                    {
+                        Photo photo = new Photo();
+                        photo.DiveId = dive.Id;
+                        photo.PhotoBytes = new ImageProcessor().ImageToByteArray(p);
+                        db.DivePhotos.Add(photo);
+                        ////dive.Photos.Add(photo);
+                    }
+                }
                 db.Dives.Add(dive);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(dive);
         }
 
         // GET: Dive/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id)   
         {
             if (id == null)
             {
@@ -130,11 +137,25 @@ namespace DiveO.Controllers
             return RedirectToAction("Index");
         }
 
+        //public ActionResult AddPhoto(int? id, IEnumerable<HttpPostedFileBase> photos)
+        //{
+            
+        //    if(photos != null)
+        //    {
+        //        Dive dive = db.Dives.Find(id);
+        //        Photo photo = new Photo();
+        //        photo.DiveId = dive.Id;
+        //        foreach (var p in photos.Select(i => new ImageProcessor().ImageToByteArray(i)));
+
+        //    }
+
+
+        //}
 
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
+            if (disposing)                                                                      
             {
                 db.Dispose();
             }

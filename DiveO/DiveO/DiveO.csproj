@@ -235,14 +235,22 @@
     <Compile Include="Migrations\201512281753050_PhotoList_Virtual.Designer.cs">
       <DependentUpon>201512281753050_PhotoList_Virtual.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602021539200_Photo_Collection_Changed.cs" />
+    <Compile Include="Migrations\201602021539200_Photo_Collection_Changed.Designer.cs">
+      <DependentUpon>201602021539200_Photo_Collection_Changed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602021855274_Photo_Collection_Removed.cs" />
+    <Compile Include="Migrations\201602021855274_Photo_Collection_Removed.Designer.cs">
+      <DependentUpon>201602021855274_Photo_Collection_Removed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Dive.cs" />
-    <Compile Include="Models\DivePhoto.cs" />
     <Compile Include="Models\Diver.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Model Attributes\Certification.cs" />
+    <Compile Include="Models\Model Attributes\Photo.cs" />
     <Compile Include="Models\Shop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\HtmlHelpers\CustomEnumDropDown.cs" />
@@ -360,6 +368,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512281753050_PhotoList_Virtual.resx">
       <DependentUpon>201512281753050_PhotoList_Virtual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602021539200_Photo_Collection_Changed.resx">
+      <DependentUpon>201602021539200_Photo_Collection_Changed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602021855274_Photo_Collection_Removed.resx">
+      <DependentUpon>201602021855274_Photo_Collection_Removed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
