@@ -59,13 +59,17 @@
             @Html.DisplayFor(model => model.Dive.Description)
         </dd>
 
-        @*<dt>
-            @Html.DisplayNameFor(model => model.Dive.Photos)
-        </dt>*@
+        <dt>
+            @Html.DisplayNameFor(model => model.Photos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Photos)
+        </dd>
 
     </dl>
-    <h5>Photos</h5>
-    @*@foreach (var item in Model.Dive.Photos)
+    @*<h5>Photos</h5>*@
+    @*@foreach (var item in Model.Photos)
     {
         <tr>
             <td>

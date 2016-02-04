@@ -17,6 +17,5 @@ namespace DiveO.ViewModels
         public string Description { get; set; }
         public string Certification { get; set; }
         public IEnumerable<Diver> DiverList { get; set; } 
-        //public IEnumerable<ApplicationUser> Friends { get; set; }
     }
 }

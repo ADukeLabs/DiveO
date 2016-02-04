@@ -37,6 +37,7 @@ namespace DiveO.Controllers
             Dive dive = db.Dives.Find(id);
             DiveViewModel dvm = new DiveViewModel();
             dvm.Dive = dive;
+            dvm.Photos = dive.Photos;
             if (dive == null)
             {
                 return HttpNotFound();
@@ -70,9 +71,10 @@ namespace DiveO.Controllers
                         photo.DiveId = dive.Id;
                         photo.PhotoBytes = new ImageProcessor().ImageToByteArray(p);
                         db.DivePhotos.Add(photo);
-                        ////dive.Photos.Add(photo);
+                        db.SaveChanges();
                     }
                 }
+
                 db.Dives.Add(dive);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -137,19 +139,9 @@ namespace DiveO.Controllers
             return RedirectToAction("Index");
         }
 
-        //public ActionResult AddPhoto(int? id, IEnumerable<HttpPostedFileBase> photos)
+        //public ActionResult ViewPhotos(int? id)
         //{
-            
-        //    if(photos != null)
-        //    {
-        //        Dive dive = db.Dives.Find(id);
-        //        Photo photo = new Photo();
-        //        photo.DiveId = dive.Id;
-        //        foreach (var p in photos.Select(i => new ImageProcessor().ImageToByteArray(i)));
-
-        //    }
-
-
+        //    db.DivePhotos.Find(id);
         //}
 
 
