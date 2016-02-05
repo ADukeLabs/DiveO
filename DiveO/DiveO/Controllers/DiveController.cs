@@ -71,7 +71,7 @@ namespace DiveO.Controllers
                         photo.DiveId = dive.Id;
                         photo.PhotoBytes = new ImageProcessor().ImageToByteArray(p);
                         db.DivePhotos.Add(photo);
-                        db.SaveChanges();
+                        ////db.SaveChanges();
                     }
                 }
 

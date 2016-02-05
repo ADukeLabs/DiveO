@@ -64,22 +64,26 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Photos)
+            @foreach (var item in Model.Photos)
+            {
+                <tr>
+                    <td>
+                        @{
+                            var img = new ImageProcessor().ByteToImage(item.PhotoBytes);
+                        }
+                        <img src="@img" width="50" height="50" />
+                    </td>
+                </tr>
+            }
         </dd>
+
+        @*<dd>
+            @Html.DisplayFor(model => model.Photos)
+        </dd>*@
 
     </dl>
     @*<h5>Photos</h5>*@
-    @*@foreach (var item in Model.Photos)
-    {
-        <tr>
-            <td>
-                @{
-                    var img = new ImageProcessor().ByteToImage(item);
-                }
-                <img src="@img" width="50" height="50"/>
-            </td>
-        </tr>
-    }*@
+    
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = new Dive().Id}) |
