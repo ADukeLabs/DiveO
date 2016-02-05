@@ -17,7 +17,11 @@
             <tr>
                 <td>
                     <div>
-                        <img src=@ByteToImage.ConvertToImage(item.ProfilePic) width="50" height="50"/>
+                        @{
+                            var base64 = Convert.ToBase64String(Model.ProfilePic);
+                            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                        }
+                        <img src="@imgSrc" width="50" height="50"/>
                         <h4>@item.Name</h4>
                     </div>
                     <div>
@@ -25,6 +29,7 @@
                         {
                             <p>Completed a new dive: @dive.DiveSite</p>
                             <p>@dive.Location</p>
+                            <p>@dive.Photos.FirstOrDefault()</p>
                         }
                     </div>
                 </td>

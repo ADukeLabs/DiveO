@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DiveO.Models.Model_Attributes;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace DiveO.Models
         public string Duration { get; set; }
         public string Depth { get; set; }
         public string Description { get; set; }
-        public virtual ICollection<byte[]> Photos { get; set; }
+        public virtual ICollection<Photo> Photos { get; set; }
         public virtual Diver Diver { get; set; }
     }
 }

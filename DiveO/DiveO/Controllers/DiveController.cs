@@ -10,6 +10,7 @@ using DiveO.Models;
 using DiveO.Services;
 using DiveO.ViewModels;
 using Microsoft.AspNet.Identity;
+using DiveO.Models.Model_Attributes;
 
 namespace DiveO.Controllers
 {
@@ -35,18 +36,12 @@ namespace DiveO.Controllers
             }
             Dive dive = db.Dives.Find(id);
             DiveViewModel dvm = new DiveViewModel();
+            dvm.Dive = dive;
+            dvm.Photos = dive.Photos;
             if (dive == null)
             {
                 return HttpNotFound();
             }
-            dvm.DiveSite = dive.DiveSite;
-            dvm.Location = dive.Location;
-            dvm.Date = dive.DateTime;
-            dvm.Time = dive.DateTime;
-            dvm.Depth = dive.Depth;
-            dvm.Duration = dive.Duration;
-            dvm.Description = dive.Description;
-            dvm.Photos = dive.Photos;
             return View(dvm);
         }
 
@@ -62,23 +57,33 @@ namespace DiveO.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         //[Authorize]
-        public ActionResult Create([Bind(Include = "Id,DiveSite,Location,DateTime,Duration,Depth,Description")] Dive dive, int? id)
+        public ActionResult Create([Bind(Include = "Id,DiveSite,Location,DateTime,Duration,Depth,Description")] Dive dive, int? id, IEnumerable<HttpPostedFileBase> files)
         {
-
             if (ModelState.IsValid)
             {
                 Diver diver = db.Divers.Find(id);
                 dive.Diver = diver;
+                if (files != null)
+                {
+                    foreach(var p in files)
+                    {
+                        Photo photo = new Photo();
+                        photo.DiveId = dive.Id;
+                        photo.PhotoBytes = new ImageProcessor().ImageToByteArray(p);
+                        db.DivePhotos.Add(photo);
+                        ////db.SaveChanges();
+                    }
+                }
+
                 db.Dives.Add(dive);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(dive);
         }
 
         // GET: Dive/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id)   
         {
             if (id == null)
             {
@@ -134,11 +139,15 @@ namespace DiveO.Controllers
             return RedirectToAction("Index");
         }
 
+        //public ActionResult ViewPhotos(int? id)
+        //{
+        //    db.DivePhotos.Find(id);
+        //}
 
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
+            if (disposing)                                                                      
             {
                 db.Dispose();
             }

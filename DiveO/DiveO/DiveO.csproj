@@ -215,17 +215,48 @@
     <Compile Include="Migrations\201512052155488_Updated.Designer.cs">
       <DependentUpon>201512052155488_Updated.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512062323457_PhotosICollection_NotVirtual.cs" />
+    <Compile Include="Migrations\201512062323457_PhotosICollection_NotVirtual.Designer.cs">
+      <DependentUpon>201512062323457_PhotosICollection_NotVirtual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512100228413_DivePhotos_List.cs" />
+    <Compile Include="Migrations\201512100228413_DivePhotos_List.Designer.cs">
+      <DependentUpon>201512100228413_DivePhotos_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512112303517_Photos_List.cs" />
+    <Compile Include="Migrations\201512112303517_Photos_List.Designer.cs">
+      <DependentUpon>201512112303517_Photos_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512131908346_PhotoList_NotVirtual.cs" />
+    <Compile Include="Migrations\201512131908346_PhotoList_NotVirtual.Designer.cs">
+      <DependentUpon>201512131908346_PhotoList_NotVirtual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512281753050_PhotoList_Virtual.cs" />
+    <Compile Include="Migrations\201512281753050_PhotoList_Virtual.Designer.cs">
+      <DependentUpon>201512281753050_PhotoList_Virtual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602021539200_Photo_Collection_Changed.cs" />
+    <Compile Include="Migrations\201602021539200_Photo_Collection_Changed.Designer.cs">
+      <DependentUpon>201602021539200_Photo_Collection_Changed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602021855274_Photo_Collection_Removed.cs" />
+    <Compile Include="Migrations\201602021855274_Photo_Collection_Removed.Designer.cs">
+      <DependentUpon>201602021855274_Photo_Collection_Removed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602040034141_Photo_Collection_Virtual.cs" />
+    <Compile Include="Migrations\201602040034141_Photo_Collection_Virtual.Designer.cs">
+      <DependentUpon>201602040034141_Photo_Collection_Virtual.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Dive.cs" />
-    <Compile Include="Models\DivePhoto.cs" />
     <Compile Include="Models\Diver.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Model Attributes\Certification.cs" />
+    <Compile Include="Models\Model Attributes\Photo.cs" />
     <Compile Include="Models\Shop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ByteToImage.cs" />
     <Compile Include="Services\HtmlHelpers\CustomEnumDropDown.cs" />
     <Compile Include="Services\ImageProcessor.cs" />
     <Compile Include="Startup.cs" />
@@ -326,6 +357,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512052155488_Updated.resx">
       <DependentUpon>201512052155488_Updated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512062323457_PhotosICollection_NotVirtual.resx">
+      <DependentUpon>201512062323457_PhotosICollection_NotVirtual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512100228413_DivePhotos_List.resx">
+      <DependentUpon>201512100228413_DivePhotos_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512112303517_Photos_List.resx">
+      <DependentUpon>201512112303517_Photos_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512131908346_PhotoList_NotVirtual.resx">
+      <DependentUpon>201512131908346_PhotoList_NotVirtual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512281753050_PhotoList_Virtual.resx">
+      <DependentUpon>201512281753050_PhotoList_Virtual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602021539200_Photo_Collection_Changed.resx">
+      <DependentUpon>201602021539200_Photo_Collection_Changed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602021855274_Photo_Collection_Removed.resx">
+      <DependentUpon>201602021855274_Photo_Collection_Removed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602040034141_Photo_Collection_Virtual.resx">
+      <DependentUpon>201602040034141_Photo_Collection_Virtual.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
