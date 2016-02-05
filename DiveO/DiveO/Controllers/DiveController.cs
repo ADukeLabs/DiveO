@@ -139,11 +139,6 @@ namespace DiveO.Controllers
             return RedirectToAction("Index");
         }
 
-        //public ActionResult ViewPhotos(int? id)
-        //{
-        //    db.DivePhotos.Find(id);
-        //}
-
 
         protected override void Dispose(bool disposing)
         {
