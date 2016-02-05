@@ -17,19 +17,24 @@
             <tr>
                 <td>
                     <div>
-                        @{
-                            var base64 = Convert.ToBase64String(Model.ProfilePic);
-                            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
-                        }
-                        <img src="@imgSrc" width="50" height="50"/>
                         <h4>@item.Name</h4>
+                        @{
+//var base64 = Convert.ToBase64String(Model.ProfilePic);
+//var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                          var img = new ImageProcessor().ByteToImage(item.ProfilePic);
+                        }
+                        <img src="@img" width="90" height="90"/>
                     </div>
                     <div>
                         @foreach (Dive dive in item.DiveLog)
                         {
                             <p>Completed a new dive: @dive.DiveSite</p>
                             <p>@dive.Location</p>
-                            <p>@dive.Photos.FirstOrDefault()</p>
+                            foreach(var p in dive.Photos)
+                            {
+                                var divePhoto = new ImageProcessor().ByteToImage(p.PhotoBytes);
+                                <img src="@divePhoto" width="70" height="70" />
+                            }
                         }
                     </div>
                 </td>

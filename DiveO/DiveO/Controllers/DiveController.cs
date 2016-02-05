@@ -71,7 +71,6 @@ namespace DiveO.Controllers
                         photo.DiveId = dive.Id;
                         photo.PhotoBytes = new ImageProcessor().ImageToByteArray(p);
                         db.DivePhotos.Add(photo);
-                        ////db.SaveChanges();
                     }
                 }
 
@@ -102,10 +101,20 @@ namespace DiveO.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,DiveSite,Location,DateTime,Duration,Depth,Description")] Dive dive)
+        public ActionResult Edit([Bind(Include = "Id,DiveSite,Location,DateTime,Duration,Depth,Description")] Dive dive, IEnumerable<HttpPostedFileBase> files)
         {
             if (ModelState.IsValid)
             {
+                if (files != null)
+                {
+                    foreach (var p in files)
+                    {
+                        Photo photo = new Photo();
+                        photo.DiveId = dive.Id;
+                        photo.PhotoBytes = new ImageProcessor().ImageToByteArray(p);
+                        db.DivePhotos.Add(photo);
+                    }
+                }
                 db.Entry(dive).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
