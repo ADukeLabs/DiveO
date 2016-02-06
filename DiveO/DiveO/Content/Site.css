@@ -1,4 +1,6 @@
 ﻿body {
+    background-image: url("Images/UnderWater.png");
+    background-size: 80px 60px;
     padding-top: 50px;
     padding-bottom: 20px;
 }

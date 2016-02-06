@@ -19,8 +19,6 @@
                     <div>
                         <h4>@item.Name</h4>
                         @{
-//var base64 = Convert.ToBase64String(Model.ProfilePic);
-//var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
                           var img = new ImageProcessor().ByteToImage(item.ProfilePic);
                         }
                         <img src="@img" width="90" height="90"/>
