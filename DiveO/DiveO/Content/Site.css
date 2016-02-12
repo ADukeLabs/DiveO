@@ -1,10 +1,30 @@
-﻿body {
+﻿
+
+body {
+    background-image: url("Images/UnderWater.png");
+    background-size: cover;
     padding-top: 50px;
     padding-bottom: 20px;
 }
 
+.jumbotron {
+    margin-top: 70px;
+    background-color: aliceblue;
+}
+
+.sidebar {
+    float: left;
+    border-left: 5px, solid, black;
+}
+
+/*.jumbotron .sidebar {
+    float: left;
+    color: aliceblue;
+}*/
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
+    
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -23,7 +43,12 @@ textarea {
     max-width: 280px;
 }
 
-#mapDiv {
+hr, footer {
+    position: fixed;
+    bottom: 0;
+}
+/*#mapDiv {
     height: 50%;
     width: 50%;
-}
+}*/
+
