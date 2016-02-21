@@ -1,0 +1,12 @@
+﻿.jumbotron {
+    margin-top: 70px;
+    background-color: black;
+}
+
+
+ #sidebar-wrapper {
+    margin-left: -250px;
+    width: 250px;
+    background: #000;
+    position: fixed;
+}

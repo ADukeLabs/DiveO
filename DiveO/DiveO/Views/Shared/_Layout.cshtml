@@ -25,7 +25,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Home", "Feed", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
@@ -34,7 +34,17 @@
         </div>
     </div>
     <div class="container body-content">
+        <div class="jumbotron col-md-8 col-md-offset-2" />
+            <div id="sidebar-wrapper" />
+                <ul class="sidebar-nav nav">
+                    <li>
+                        
+                    </li>
+                </ul>
+                
+            </div>
         @RenderBody()
+        </div>
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
