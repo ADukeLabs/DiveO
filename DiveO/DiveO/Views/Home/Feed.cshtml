@@ -6,16 +6,13 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron col-md-8 col-md-offset-2">
     @*<h1>ASP.NET</h1>
     <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
     <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
     
-    <div class="sidebar">
-        
+    <div class="title">
+        <h2>Dive Feed</h2>
     </div>
-    
-    <h2>Dive Feed</h2>
 
         @foreach (var item in Model.DiverList)
         {
@@ -39,7 +36,3 @@
                     }
             </div>
         }
-
-    </div>
-    
-
