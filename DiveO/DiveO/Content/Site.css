@@ -1,5 +1,4 @@
-﻿
-body {
+﻿body {
     background-image: url("Images/UnderWater.png");
     background-size: cover;
     padding-top: 50px;
@@ -14,7 +13,21 @@ body {
     padding-right: 15px;
 }
 
+#sidebar-wrapper {
+    border-left: 5px solid black;
+    margin-left: -250px;
+    width: 250px;
+    color:aqua;
+    position: fixed;
+}
 
+ .jumbotron {
+    margin-top: 70px;
+    background-color: black;
+}
+
+
+ 
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
