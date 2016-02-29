@@ -34,23 +34,24 @@
         </div>
     </div>
     <div class="container body-content">
-        
-        <div class="jumbotron col-md-8 col-md-offset-2">
-                <div id="sidebar-wapper">
-                    <ul class="sidebar-nav">
-                        <li>Feed</li>
-                        <li>Page</li>
-                        <li>Dives</li>
-                        <li>Friends</li>
-                    </ul>
-                </div>
+        <div class="jumbotron">
+            <div class="sidebar">
+                <ul>
+                    <li>Feed</li>
+                    <li>Page</li>
+                    <li>Dives</li>
+                    <li>Friends</li>
+                </ul>
+            </div>
 
 
-                <div>
-                    @RenderBody()
-                </div>
-            
+
+            <div class="jumbotron">
+                @RenderBody()
+            </div>
         </div>
+        
+    </div>
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
