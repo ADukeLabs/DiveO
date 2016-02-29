@@ -15,8 +15,8 @@
 
 .jumbotron {
     position: center;
-    margin: 30px 50px 30px 50px;
-    padding-left: 0px;
+    margin: auto;
+    padding: none;
     border: 1px solid black;
     background-color: #1C6780;
 }
