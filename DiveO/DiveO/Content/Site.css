@@ -22,16 +22,24 @@
     background-color: #1C6780;
 }
 
-.sidebar {
-  background-color: aqua;
-  color: red;
-  width: 80px;
-  height: ;
+#sidebar-wrapper {
+    float:left;
+    margin-right:5px;
+    width: 100px;
+    height: 500px;
 }
 
 .title-header{
     border: 2px solid black;
+    width: auto;
 }
+
+.content-box{
+    border: 2px solid black;
+    float: left;
+}
+
+
 
  
 
