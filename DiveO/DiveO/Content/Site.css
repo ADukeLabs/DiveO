@@ -15,7 +15,7 @@
 .jumbotron{
     position:center;
     margin-top: 65px;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     padding-left: 0;
     padding-right: 0;
     border: 1px solid black;
@@ -24,19 +24,32 @@
 
 #sidebar-wrapper {
     float:left;
-    margin-right:5px;
+    margin-right:0px;
     width: 100px;
     height: 500px;
 }
 
+.sidebar-nav{
+    color: cyan;
+}
+
 .title-header{
     border: 2px solid black;
-    width: auto;
+    background-color: #252222;
+    color: cyan;
+    width: 658px;
 }
 
 .content-box{
     border: 2px solid black;
+    background-color: #252222;
     float: left;
+    color: cyan;
+    width: 658px;
+}
+
+.photo{
+    border: 1px solid black;
 }
 
 
