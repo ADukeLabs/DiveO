@@ -13,7 +13,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="title-header col-sm-6">
-            <h2 class="text-center text-primary">Dive Feed</h2>
+            <h2 class="text-primary">Dive Feed</h2>
         </div>
         <div class="content-box col-sm-8">
             @foreach (var item in Model.DiverList)
@@ -32,7 +32,7 @@
                      foreach (var p in dive.Photos)
                      {
                         var divePhoto = new ImageProcessor().ByteToImage(p.PhotoBytes);
-                        <img src="@divePhoto" width="70" height="70" />
+                        <img src="@divePhoto" class="photo" width="70" height="70" />
                      }
                 }
                 </div>
