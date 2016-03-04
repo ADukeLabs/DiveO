@@ -34,22 +34,26 @@
         </div>
     </div>
     <div class="container body-content">
-        <div class="jumbotron col-md-8 col-md-offset-2" />
-            <div id="sidebar-wrapper" />
-                <ul class="sidebar-nav nav">
-                    <li>
-                        
-                    </li>
-                </ul>
-                
-            </div>
-        @RenderBody()
-        </div>
+         <div class="jumbotron col-sm-8 col-sm-offset-2">
+             <nav class="navbar navbar-inverse" id="sidebar-wrapper" role="navigation">
+                 <ul class="nav sidebar-nav">
+                     <li>Feed</li>
+                     <li>Page</li>
+                     <li>Dives</li>
+                     <li>Friends</li>
+                 </ul>
+             </nav>
+
+
+                 @RenderBody()
+         </div>
+                    
+    </div>
+
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
-    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
