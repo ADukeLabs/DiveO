@@ -37,14 +37,10 @@
          <div class="jumbotron col-sm-8 col-sm-offset-2">
              <nav class="navbar navbar-inverse" id="sidebar-wrapper" role="navigation">
                  <ul class="nav sidebar-nav">
-                     <li>Feed</li>
-                     <li>Page</li>
-                     <li>Dives</li>
-                     <li>Friends</li>
+                     <li>@Html.ActionLink("Feed", "Feed", "Home")</li>
+                     <li>@Html.ActionLink("Dives", "Index", "Dive")</li>
                  </ul>
              </nav>
-
-
                  @RenderBody()
          </div>
                     
