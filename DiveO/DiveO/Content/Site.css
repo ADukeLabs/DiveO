@@ -12,21 +12,15 @@
     padding-right: 15px;
 }
 
-.jumbotron{
-    position:center;
-    margin-top: 65px;
-    margin-bottom: 60px;
-    padding-left: 0;
-    padding-right: 0;
-    border: 1px solid black;
-    background-color: #1C6780;
+.jumbotron {
+    padding: 0%;
 }
 
 #sidebar-wrapper {
     float:left;
     margin-right:0px;
     width: 100px;
-    height: 500px;
+    height: inherit;
 }
 
 .sidebar-nav{
@@ -37,7 +31,7 @@
     border: 2px solid black;
     background-color: #252222;
     color: cyan;
-    width: 658px;
+    width: 100%;
 }
 
 .content-box{
@@ -45,7 +39,8 @@
     background-color: #252222;
     float: left;
     color: cyan;
-    width: 658px;
+    height: 100%;
+
 }
 
 .photo{

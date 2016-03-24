@@ -18,12 +18,12 @@ namespace DiveO.Controllers
     public class DiversController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        //protected UserManager<ApplicationUser> UserManager { get; set; }
+        protected UserManager<ApplicationUser> UserManager { get; set; }
 
-        //public DiversController()
-        //{
-        //    UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
-        //}
+        public DiversController()
+        {
+            UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+        }
 
         // GET: Divers
         //[Authorize]
@@ -69,8 +69,8 @@ namespace DiveO.Controllers
 
             if (ModelState.IsValid)
             {
-                //var id = User.Identity.GetUserId();
-                //diver.ApplicationUser = UserManager.FindById(id);
+                var id = User.Identity.GetUserId();
+                diver.ApplicationUser = UserManager.FindById(id);
                 db.Divers.Add(diver);
                 db.SaveChanges();
                 return RedirectToAction("Index");

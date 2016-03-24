@@ -34,24 +34,17 @@
         </div>
     </div>
     <div class="container body-content">
-         <div class="jumbotron col-sm-8 col-sm-offset-2">
-             <nav class="navbar navbar-inverse" id="sidebar-wrapper" role="navigation">
-                 <ul class="nav sidebar-nav">
-                     <li>@Html.ActionLink("Feed", "Feed", "Home")</li>
-                     <li>@Html.ActionLink("Dives", "Index", "Dive")</li>
-                 </ul>
-             </nav>
+         
                  @RenderBody()
          </div>
-                    
-    </div>
+                   
 
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Alex Duke Software Developer</p>
         </footer>
 
-    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquery")                                                                    
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
