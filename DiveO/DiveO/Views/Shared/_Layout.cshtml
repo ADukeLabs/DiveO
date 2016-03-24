@@ -12,7 +12,7 @@
 
 </head>
 <body>
-    
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -33,18 +33,30 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
-         
-                 @RenderBody()
-         </div>
-                   
+    <div class="container-fluid">
+        <div class="container body-content">
+            <div class="jumbotron col-sm-8 col-sm-offset-2">
+                <div id="wrapper">
+                    <div id="sidebar-wrapper">
+                        <ul class="sidebar-nav">
+                            <li>@Html.ActionLink("Feed", "Feed", "Home")</li>
+                            <li>@Html.ActionLink("Dives", "Index", "Dive")</li>
+                        </ul>
+                    </div>
+                </div>
 
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Alex Duke Software Developer</p>
-        </footer>
+                @RenderBody()
+            </div>
+        </div>
+    </div>
 
-    @Scripts.Render("~/bundles/jquery")                                                                    
+
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Alex Duke Software Developer</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
