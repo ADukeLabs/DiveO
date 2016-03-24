@@ -13,14 +13,13 @@ namespace DiveO.Controllers
     public class HomeController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();
-        //protected UserManager<ApplicationUser> UserManager { get; set; }
+        protected UserManager<ApplicationUser> UserManager { get; set; }
 
-        //public HomeController()
-        //{
-        //    this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
-        //} 
+        public HomeController()
+        {
+            this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
+        }
 
-        //[Authorize]
         public ActionResult Feed()
         {
             DiverViewModel dvm = new DiverViewModel();

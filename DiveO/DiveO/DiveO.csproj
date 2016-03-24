@@ -247,6 +247,10 @@
     <Compile Include="Migrations\201602040034141_Photo_Collection_Virtual.Designer.cs">
       <DependentUpon>201602040034141_Photo_Collection_Virtual.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201603051835374_ApplicationUser_AddedTo_Diver.cs" />
+    <Compile Include="Migrations\201603051835374_ApplicationUser_AddedTo_Diver.Designer.cs">
+      <DependentUpon>201603051835374_ApplicationUser_AddedTo_Diver.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Dive.cs" />
@@ -382,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602040034141_Photo_Collection_Virtual.resx">
       <DependentUpon>201602040034141_Photo_Collection_Virtual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603051835374_ApplicationUser_AddedTo_Diver.resx">
+      <DependentUpon>201603051835374_ApplicationUser_AddedTo_Diver.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
