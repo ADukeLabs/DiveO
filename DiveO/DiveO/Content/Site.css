@@ -22,11 +22,13 @@
 }
 
 #sidebar-wrapper {
-
+    background-color: aliceblue;
+    height: 100%;
 }
 
 .sidebar-nav {
   position: absolute;
+  background-color:#252222;
   top: 0;
   width: 100px;
   height: inherit;
