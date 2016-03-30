@@ -14,7 +14,7 @@
 }
 
 .jumbotron {
-    padding: inherit;
+    padding: 0%;
 }
 
 #wrapper {
@@ -22,7 +22,6 @@
 }
 
 #sidebar-wrapper {
-    background-color: aliceblue;
     height: 100%;
 }
 
@@ -32,27 +31,16 @@
   top: 0;
   width: 100px;
   height: inherit;
+  float: left;
   list-style: none;
   margin: 0;
   padding: 0;
   color: cyan;
 }
 
-
-.title-header{
-    border: 2px solid black;
-    background-color: #252222;
-    color: cyan;
-    width: 100%;
-}
-
 .content-box{
     border: 2px solid black;
     background-color: #252222;
-    float: left;
-    color: cyan;
-    height: 100%;
-
 }
 
 .photo{
