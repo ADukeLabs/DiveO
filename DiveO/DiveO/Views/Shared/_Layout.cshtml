@@ -12,7 +12,7 @@
 
 </head>
 <body>
-    
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -28,23 +28,27 @@
                     <li>@Html.ActionLink("Home", "Feed", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                   
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container body-content">
-         
-                 @RenderBody()
-         </div>
-                   
+    <div class="container-fluid">
+        <div class="container body-content">
+            <div class="jumbotron col-md-8 col-md-offset-2">
+                @RenderBody()
+           </div>
+       </div>
+    </div>
 
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Alex Duke Software Developer</p>
-        </footer>
 
-    @Scripts.Render("~/bundles/jquery")                                                                    
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Alex Duke Software Developer</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
