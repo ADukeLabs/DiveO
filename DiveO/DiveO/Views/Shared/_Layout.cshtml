@@ -28,6 +28,7 @@
                     <li>@Html.ActionLink("Home", "Feed", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                   
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -36,30 +37,9 @@
     <div class="container-fluid">
         <div class="container body-content">
             <div class="jumbotron col-md-8 col-md-offset-2">
-                @*<div id="wrapper">
-                    <div id="sidebar-wrapper">
-                        <ul class="sidebar-nav col-md-3">
-                            <li>@Html.ActionLink("Feed", "Feed", "Home")</li>
-
-                            <li>@Html.ActionLink("Dives", "Index", "Dive")</li>
-
-                        </ul>
-                    </div>
-                </div>*@
-
-                <nav class="navbar navbar-inverse" id="sidebar-wrapper" role="navigation">
-                    <ul class="nav sidebar-nav">
-                        <li>Feed</li>
-                        <li>Page</li>
-                        <li>Dives</li>
-                        <li>Friends</li>
-                    </ul>
-                </nav>
-                <div class="content-box col-md-8">
-                    @RenderBody()
-                </div>
-            </div>
-        </div>
+                @RenderBody()
+           </div>
+       </div>
     </div>
 
 

@@ -12,28 +12,28 @@
 
 
 
-        
-            <h2 class="text-primary">Dive Feed</h2>
-            @foreach (var item in Model.DiverList)
+  <div class="content-box">
+    <h2 class="text-primary">Dive Feed</h2>
+    @foreach (var item in Model.DiverList)
             {
-                <div>
-                    @foreach (Dive dive in item.DiveLog)
-                    {
-                        <div class="user-row">
-                            @{
-                                var img = new ImageProcessor().ByteToImage(item.ProfilePic);
-                            }
-                            <img src="@img" class="img-circle" width="50" height="50" style="display: inline-block;" />
-                            <h3 style="display: inline-block;">@item.Name</h3>
-                        </div>
-                            <p>Completed a new dive: @dive.DiveSite, @dive.Location</p>
-                                foreach (var p in dive.Photos)
-                                {
-                                    var divePhoto = new ImageProcessor().ByteToImage(p.PhotoBytes);
-                                    <img src="@divePhoto" class="photo" width="70" height="70" />
-                                }
+        <div>
+            @foreach (Dive dive in item.DiveLog)
+            {
+                <div class="user-row">
+                    @{
+                        var img = new ImageProcessor().ByteToImage(item.ProfilePic);
                     }
+                    <img src="@img" class="img-circle" width="50" height="50" style="display: inline-block;" />
+                    <h3 style="display: inline-block;">@item.Name</h3>
                 </div>
-             }
-        
+                        <p>Completed a new dive: @dive.DiveSite, @dive.Location</p>
+                        foreach (var p in dive.Photos)
+                        {
+                            var divePhoto = new ImageProcessor().ByteToImage(p.PhotoBytes);
+                            <img src="@divePhoto" class="photo" width="70" height="70" />
+                            }
+                        }
+        </div>
+                        }
+    </div>
 
