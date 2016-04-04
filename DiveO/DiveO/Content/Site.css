@@ -22,6 +22,10 @@
     background-color: #252222;
 }
 
+.user-row{
+    padding-left:10px;
+}
+
 .photo{
     border: 1px solid black;
 }

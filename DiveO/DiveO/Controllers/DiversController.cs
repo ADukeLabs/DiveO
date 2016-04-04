@@ -40,7 +40,12 @@ namespace DiveO.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Diver diver = db.Divers.Find(id);
+            DiverViewModel dvm = new DiverViewModel();
+            dvm.Name = db.Divers.Find(id).Name;
+            dvm.ProfilePic = db.Divers.Find(id).ProfilePic;
+            dvm.HomeBase = db.Divers.Find(id).Location;
+            dvm.Certification = db.Divers.Find(id).Certification;
+            //Diver diver = db.Divers.Find(id);
             if (diver == null)
             {
                 return HttpNotFound();
