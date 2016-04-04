@@ -1,12 +1,12 @@
 ﻿@using DiveO.Services
-@model DiveO.Models.Diver
+@model DiveO.ViewModels.DiverViewModel
 
 @{
     ViewBag.Title = "Details";
 }
 
     <div class="content-box">
-        <div class="row">
+        <div class="user-row">
             <div class="title-header">
                 @{
                     var img = new ImageProcessor().ByteToImage(Model.ProfilePic);
@@ -16,7 +16,7 @@
             </div>
             <div id="user_info">
                 <h6>Home Base</h6>
-                <p>@Html.DisplayFor(model => model.Location)</p>
+                <p>@Html.DisplayFor(model => model.HomeBase)</p>
                 <h6>About Me</h6>
                 <p>@Html.DisplayFor(model => model.Description)</p>
                 <h6>Certification Level</h6>

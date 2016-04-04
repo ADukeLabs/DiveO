@@ -46,11 +46,11 @@ namespace DiveO.Controllers
             dvm.HomeBase = db.Divers.Find(id).Location;
             dvm.Certification = db.Divers.Find(id).Certification;
             //Diver diver = db.Divers.Find(id);
-            if (diver == null)
+            if (dvm == null)
             {
                 return HttpNotFound();
             }
-            return View(diver);
+            return View(dvm);
         }
 
         // GET: Divers/Create
