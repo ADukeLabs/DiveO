@@ -26,6 +26,11 @@
     padding-left:10px;
 }
 
+.user-info{
+    color: aqua;
+    font-family: Arial;
+}
+
 .photo{
     border: 1px solid black;
 }
