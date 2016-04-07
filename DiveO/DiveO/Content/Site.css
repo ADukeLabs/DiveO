@@ -7,7 +7,8 @@
 
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
+.container body-content {
+    margin-top: 100px;
     padding-top: 110px;
     padding-left: 15px;
     padding-right: 15px;
@@ -19,16 +20,24 @@
 
 .content-box{
     border: 2px solid black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
     background-color: #252222;
 }
 
-.user-row{
+.user-name{
     padding-left:10px;
+    color: aqua;
 }
 
 .user-info{
     color: aqua;
-    font-family: Arial;
+    font-family: Calibri;
+}
+
+.user-info p{
+    font-size: 30px;
 }
 
 .photo{
