@@ -41,6 +41,7 @@ namespace DiveO.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             DiverViewModel dvm = new DiverViewModel();
+            dvm.Id = db.Divers.Find(id).Id;
             dvm.Name = db.Divers.Find(id).Name;
             dvm.ProfilePic = db.Divers.Find(id).ProfilePic;
             dvm.HomeBase = db.Divers.Find(id).Location;
