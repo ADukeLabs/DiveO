@@ -11,11 +11,12 @@ namespace DiveO.ViewModels
 {
     public class DiverViewModel
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public byte[] ProfilePic { get; set; }
         public string HomeBase { get; set; }
         public string Description { get; set; }
-        public string Certification { get; set; }
+        public CertificationLevel Certification { get; set; }
         public IEnumerable<Diver> DiverList { get; set; } 
     }
 }
