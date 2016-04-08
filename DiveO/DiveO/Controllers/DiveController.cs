@@ -26,6 +26,13 @@ namespace DiveO.Controllers
             return View(db.Dives.ToList());
         }
 
+        public ActionResult DiveLog(int? id)
+        {
+            DiveViewModel dvm = new DiveViewModel();
+            dvm.DiveList = db.Dives.ToList().FindAll(d => d.Diver.Id == id);
+            return View(dvm);
+        }
+
         //[Authorize]
         // GET: Dive/Details/5
         public ActionResult Details(int? id)
