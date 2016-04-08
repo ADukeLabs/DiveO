@@ -1,22 +1,19 @@
 ﻿@using DiveO.Services
 @model DiveO.ViewModels.DiverViewModel
 
-@{
-    ViewBag.Title = "Details";
-}
-
     <div class="content-box">
         <div class="container">
             <div class="row">
-                <div class="user-row">
+                <div id="user-name">
                     @{
                         var img = new ImageProcessor().ByteToImage(Model.ProfilePic);
                     }
                     <img src="@img" class="img-circle" width="60" height="60" style="display: inline-block" />
                     <h3 style="display: inline-block">@Html.DisplayFor(model => model.Name)</h3>
                 </div>
+                </div>
                 <div class="row">
-                    <div class="user_info col-md-3">
+                    <div class="user-info col-md-3">
                         <h6>Home Base</h6>
                         <p>@Html.DisplayFor(model => model.HomeBase)</p>
                         <h6>About Me</h6>
@@ -25,6 +22,16 @@
                         <p>@Html.DisplayFor(model => model.Certification)</p>
                     </div>
                 </div>
+               <div class="row">
+                       @Html.ActionLink("Dive Log", "DiveLog", "Dive", new { id = Model.Id }, null)
+
+                   @*<p>
+                       @Html.ActionLink("Dive Log", "Index", "Dive") |
+                       @Html.ActionLink("Add A Dive", "Create", "Dive", new { id = Model.Id }, null) |
+                       @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                       @Html.ActionLink("Back to List", "Index")
+                   </p>*@
+               </div>
             </div>            
         </div>
     </div>
@@ -34,10 +41,5 @@
 
 
     
-    <p>
-        @Html.ActionLink("Dive Log", "Index", "Dive") |
-        @Html.ActionLink("Add A Dive", "Create", "Dive", new { id = Model.Id }, null) |
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+    
 
