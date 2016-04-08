@@ -344,6 +344,7 @@
     <Content Include="Views\Dive\Details.cshtml" />
     <Content Include="Views\Dive\Edit.cshtml" />
     <Content Include="Views\Dive\Index.cshtml" />
+    <Content Include="Views\Dive\DiveLog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

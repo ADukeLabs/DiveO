@@ -10,6 +10,7 @@ namespace DiveO.ViewModels
     public class DiveViewModel
     {
         public Dive Dive { get; set; }
+        public Diver Diver { get; set; }
         public IEnumerable<Dive> DiveList { get; set; }
         public IEnumerable<Photo> Photos { get; set; }
     }
