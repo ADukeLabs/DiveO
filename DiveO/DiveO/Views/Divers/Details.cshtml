@@ -23,12 +23,14 @@
                     </div>
                 </div>
                <div class="row">
-                   <p>
+                       @Html.ActionLink("Dive Log", "DiveLog", "Dive", new { id = Model.Id }, null)
+
+                   @*<p>
                        @Html.ActionLink("Dive Log", "Index", "Dive") |
-                       @*@Html.ActionLink("Add A Dive", "Create", "Dive", new { id = Model.Id }, null) |*@
-                       @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-                       @Html.ActionLink("Back to List", "Index")*@
-                   </p>
+                       @Html.ActionLink("Add A Dive", "Create", "Dive", new { id = Model.Id }, null) |
+                       @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                       @Html.ActionLink("Back to List", "Index")
+                   </p>*@
                </div>
             </div>            
         </div>
