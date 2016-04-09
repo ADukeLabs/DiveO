@@ -1,29 +1,32 @@
 ﻿@using DiveO.Services
 @model DiveO.ViewModels.DiverViewModel
 
-    <div class="content-box">
         <div class="container">
             <div class="row">
-                <div id="user-name">
-                    @{
-                        var img = new ImageProcessor().ByteToImage(Model.ProfilePic);
-                    }
-                    <img src="@img" class="img-circle" width="60" height="60" style="display: inline-block" />
-                    <h3 style="display: inline-block">@Html.DisplayFor(model => model.Name)</h3>
+                <div class="well col-sm-8 col-sm-offset-2">
+                    <div class="content">
+                        @{
+                            var img = new ImageProcessor().ByteToImage(Model.ProfilePic);
+                        }
+                        <img src="@img" class="img-circle" width="60" height="60" style="display: inline-block" />
+                        <h3 style="display: inline-block">@Html.DisplayFor(model => model.Name)</h3>
+                    </div>
                 </div>
                 </div>
                 <div class="row">
-                    <div class="user-info col-md-3">
-                        <h6>Home Base</h6>
-                        <p>@Html.DisplayFor(model => model.HomeBase)</p>
-                        <h6>About Me</h6>
-                        <p>@Html.DisplayFor(model => model.Description)</p>
-                        <h6>Certification Level</h6>
-                        <p>@Html.DisplayFor(model => model.Certification)</p>
+                    <div class="well col-sm-8 col-sm-offset-2">
+                        <div class="content">
+                            <h6>Home Base</h6>
+                            <p>@Html.DisplayFor(model => model.HomeBase)</p>
+                            <h6>About Me</h6>
+                            <p>@Html.DisplayFor(model => model.Description)</p>
+                            <h6>Certification Level</h6>
+                            <p>@Html.DisplayFor(model => model.Certification)</p>
+                        </div>
+                        <button class="btn btn-primary">@Html.ActionLink("Dive Log", "DiveLog", "Dive", new { id = Model.Id }, null)</button>
                     </div>
                 </div>
-               <div class="row">
-                       @Html.ActionLink("Dive Log", "DiveLog", "Dive", new { id = Model.Id }, null)
+                       
 
                    @*<p>
                        @Html.ActionLink("Dive Log", "Index", "Dive") |
@@ -31,15 +34,4 @@
                        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
                        @Html.ActionLink("Back to List", "Index")
                    </p>*@
-               </div>
             </div>            
-        </div>
-    </div>
-
-
-
-
-
-    
-    
-
