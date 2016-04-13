@@ -16,13 +16,14 @@
 
             <div class="row">
                 <div class="well col-sm-8 col-sm-offset-2">
-                    <div class="content">
+                        <button class="btn btn-primary">@Html.ActionLink("Add A Dive", "Create", "Dive", new { id = Model.Diver.Id }, null)</button>
                         @foreach (var item in Model.DiveList)
                         { 
-                            <p>@Html.DisplayFor(i => item.DiveSite)</p>
-                            <p style="display: inline-block">@Html.DisplayFor(i => item.Location)</p>
-                        } 
-                    </div>
+                            <div class="content">
+                                <p>@Html.DisplayFor(i => item.DiveSite)</p>
+                                <p style="display: inline-block">@Html.DisplayFor(i => item.Location)</p>    
+                            </div>
+                        }
                 </div>
             </div>
         </div>  

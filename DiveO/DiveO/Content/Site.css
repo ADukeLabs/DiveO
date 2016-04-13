@@ -22,6 +22,7 @@
 
 .content{
     color: aqua;
+    border: 3px thin white;
 }
 
 .user-name{
