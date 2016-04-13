@@ -1,25 +1,29 @@
 ﻿@using DiveO.Services
 @model DiveO.ViewModels.DiveViewModel
 
-    <div class="content-box">
         <div class="container">
             <div class="row">
-                <div id="user-name">
-                    @{ 
-                        var img = new ImageProcessor().ByteToImage(Model.Diver.ProfilePic);
-                    }
-                    <img src="@img" class="img-circle" width="60" height="60" style="display: inline-block" />
-                    <h3 style="display: inline-block">@Html.DisplayFor(model => model.Diver.Name)</h3>
-                </div>
-            </div>
-            @foreach (var item in Model.DiveList)
-            {
-                <div class="row">
-                    <div class="user-dive-log col-sm-6">
-                        <p>@Html.DisplayFor(i => item.DiveSite)</p>
-                        <p style="display: inline-block">@Html.DisplayFor(i => item.Location)</p>
+                <div class="well col-sm-8 col-sm-offset-2">
+                    <div class="content">
+                        @{
+                            var img = new ImageProcessor().ByteToImage(Model.Diver.ProfilePic);
+                        }
+                        <img src="@img" class="img-circle" width="60" height="60" style="display: inline-block" />
+                        <h3 style="display: inline-block">@Html.DisplayFor(model => model.Diver.Name)</h3>
                     </div>
                 </div>
-            } 
-        </div>
-    </div>
+            </div>
+
+            <div class="row">
+                <div class="well col-sm-8 col-sm-offset-2">
+                        <button class="btn btn-primary">@Html.ActionLink("Add A Dive", "Create", "Dive", new { id = Model.Diver.Id }, null)</button>
+                        @foreach (var item in Model.DiveList)
+                        { 
+                            <div class="content">
+                                <p>@Html.DisplayFor(i => item.DiveSite)</p>
+                                <p style="display: inline-block">@Html.DisplayFor(i => item.Location)</p>    
+                            </div>
+                        }
+                </div>
+            </div>
+        </div>  

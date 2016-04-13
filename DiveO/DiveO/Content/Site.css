@@ -14,16 +14,15 @@
     padding-right: 15px;
 }
 
-.jumbotron{
-    padding: 0%;
+.well{
+    border: 2px solid black;
+    background-color: #252222;
+    opacity: 0.9;
 }
 
-.content-box{
-    border: 2px solid black;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 15px;
-    background-color: #252222;
+.content{
+    color: aqua;
+    border: 3px thin white;
 }
 
 .user-name{
