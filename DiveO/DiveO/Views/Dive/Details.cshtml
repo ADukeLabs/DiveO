@@ -1,86 +1,61 @@
 ﻿@using DiveO.Services
 @model DiveO.ViewModels.DiveViewModel
 
-@{
-    ViewBag.Title = "Details";
-}
+<div class="row">
+    <div class="well col-sm-8 col-sm-offset-2">
+        <div class="content">
+            <h3>Dive</h3> 
+        </div>
+    </div>
+</div>
 
-<h2>Details</h2>
+<div class="row">
+    <div class="well col-sm-8 col-sm-offset-2">
+        <div class="content">
+            <div class="col-sm-3">
+                <h4>DiveSite</h4>
+                <p>@Html.DisplayFor(model => Model.Dive.DiveSite)</p>
+                <h4>Location</h4>
+                <p>@Html.DisplayFor(model => Model.Dive.Location)</p>
+            </div>
+            <div class="col-sm-3">
+                <h4>Date</h4>
+                <p>@Html.DisplayFor(model => model.Dive.DateTime.Date)</p>
+                <h4>Time</h4>
+                <p>@Html.DisplayFor(model => model.Dive.DateTime.Hour)</p>
+            </div>
+            <div class="col-sm-3">
+                <h4>Duration</h4>
+                <p>@Html.DisplayFor(model => model.Dive.Duration)</p>
+                <h4>Depth</h4>
+                <p>@Html.DisplayFor(model => model.Dive.Depth)</p>
+            </div>
+        </div>
+    </div>
+</div>
 
-<div>
-    <h4>Dive</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Dive.DiveSite)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Dive.Location)
-        </dd>
-
-        <dt>
-            <h5>Date</h5>
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Dive.DateTime.Date)
-        </dd>
-
-        <dt>
-            <h5>Time</h5>
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Dive.DateTime.Hour)  
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Dive.Duration)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Dive.Duration)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Dive.Depth)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Dive.Depth)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Dive.Description)
-        </dt>
-
-        <dd>
+<div class="row">
+    <div class="well col-sm-8 col-sm-offset-2">
+        <div class="content">
+            <h3>Description</h3>
             @Html.DisplayFor(model => model.Dive.Description)
-        </dd>
+        </div>
+    </div>
+</div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Photos)
-        </dt>
-
-        <dd>
+<div class="row">
+    <div class="well col-sm-8 col-sm-offset-2">
+        <div class="content">
+            <h3>Photos</h3>
             @foreach (var item in Model.Photos)
             {
-                <tr>
-                    <td>
-                        @{
-                            var img = new ImageProcessor().ByteToImage(item.PhotoBytes);
-                        }
-                        <img src="@img" width="50" height="50" />
-                    </td>
-                </tr>
-            }
-        </dd>
-
-    </dl>
-    @*<h5>Photos</h5>*@
-    
+            var img = new ImageProcessor().ByteToImage(item.PhotoBytes);
+            <img src="@img" width="50" height="50" />
+           }
+        </div>
+    </div>
 </div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = new Dive().Id}) |
     @Html.ActionLink("Back to List", "Index")
