@@ -41,8 +41,13 @@
     font-size: 30px;
 }
 
-.photo{
+.photo {
     border: 1px solid black;
+}
+
+#mapDiv {
+    height: inherit;
+    width: inherit;
 }
 
 
