@@ -4,7 +4,7 @@
 <div class="row">
     <div class="well col-sm-8 col-sm-offset-2">
         <div class="content">
-            <h3>Dive</h3> 
+            <h3>@Html.DisplayFor(model => Model.Dive.DiveSite), @Html.DisplayFor(model => Model.Dive.Location)</h3> 
         </div>
     </div>
 </div>
@@ -12,12 +12,12 @@
 <div class="row">
     <div class="well col-sm-8 col-sm-offset-2">
         <div class="content">
-            <div class="col-sm-3">
+            @*<div class="col-sm-3">
                 <h4>DiveSite</h4>
-                <p>@Html.DisplayFor(model => Model.Dive.DiveSite)</p>
+                <p></p>
                 <h4>Location</h4>
-                <p>@Html.DisplayFor(model => Model.Dive.Location)</p>
-            </div>
+                <p></p>
+            </div>*@
             <div class="col-sm-3">
                 <h4>Date</h4>
                 <p>@Html.DisplayFor(model => model.Dive.DateTime.Date)</p>
