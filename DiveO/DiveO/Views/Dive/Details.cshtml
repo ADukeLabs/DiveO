@@ -2,34 +2,59 @@
 @model DiveO.ViewModels.DiveViewModel
 
 <div class="row">
-    <div class="well col-sm-8 col-sm-offset-2">
-        <div class="content">
-            <h3>@Html.DisplayFor(model => Model.Dive.DiveSite), @Html.DisplayFor(model => Model.Dive.Location)</h3> 
-        </div>
+    <div class="col-sm-8 col-sm-offset-2">
+        <h2 class="text-primary well">@Html.DisplayFor(model => Model.Dive.DiveSite), @Html.DisplayFor(model => Model.Dive.Location)</h2>
     </div>
 </div>
 
 <div class="row">
     <div class="well col-sm-8 col-sm-offset-2">
+
         <div class="content">
-            @*<div class="col-sm-3">
-                <h4>DiveSite</h4>
-                <p></p>
-                <h4>Location</h4>
-                <p></p>
-            </div>*@
-            <div class="col-sm-3">
-                <h4>Date</h4>
-                <p>@Html.DisplayFor(model => model.Dive.DateTime.Date)</p>
-                <h4>Time</h4>
-                <p>@Html.DisplayFor(model => model.Dive.DateTime.Hour)</p>
+            <div id="mapDiv"></div>
+        </div>
+
+        <div class="content">
+            <div class="row">
+                <div class="col-sm-2">
+                    <h4>Date</h4>
+                    <p>@Html.DisplayFor(model => model.Dive.DateTime.Date)</p>
+                </div>
+
+                <div class="col-sm-2">
+                    <h4>Time</h4>
+                    <p>@Html.DisplayFor(model => model.Dive.DateTime.Hour)</p>
+                </div>
+
+                <div class="col-sm-2">
+                    <h4>Duration</h4>
+                    <p>@Html.DisplayFor(model => model.Dive.Duration)</p>
+                </div>
+
+                <div class="col-sm-2">
+                    <h4>Depth</h4>
+                    <p>@Html.DisplayFor(model => model.Dive.Depth)</p>
+                </div>
             </div>
-            <div class="col-sm-3">
-                <h4>Duration</h4>
-                <p>@Html.DisplayFor(model => model.Dive.Duration)</p>
-                <h4>Depth</h4>
-                <p>@Html.DisplayFor(model => model.Dive.Depth)</p>
-            </div>
+            
+            
+            @*<div class="col-sm-8">
+                <h3>Description</h3>
+                <p>@Html.DisplayFor(model => model.Dive.Description)</p>
+            </div>*@ 
+            
+        </div>
+        
+    </div>
+</div>
+
+@*<div class="row">
+    <div class="well col-sm-8 col-sm-offset-2">
+        <div class="content">
+            
+            
+            
+            
         </div>
     </div>
 </div>
@@ -41,7 +66,7 @@
             @Html.DisplayFor(model => model.Dive.Description)
         </div>
     </div>
-</div>
+</div>*@
 
 <div class="row">
     <div class="well col-sm-8 col-sm-offset-2">
@@ -60,3 +85,14 @@
     @Html.ActionLink("Edit", "Edit", new { id = new Dive().Id}) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+<script type="text/javascript">
+        function initialize() {
+            var mapOptions = {
+                center: new google.maps.LatLng(0, 0),
+                zoom: 4
+            };
+            var map = new google.maps.Map(document.getElementById("mapDiv"), mapOptions);
+        }
+        google.maps.event.addDomListener(window, "load", initialize);
+</script>

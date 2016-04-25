@@ -20,11 +20,18 @@
     opacity: 0.9;
 }
 
+.jumbotron{
+    border: 2px solid black;
+    background-color: #252222;
+    opacity: 0.9;
+    font-size: 5px;
+}
+
 .content{
     color: aqua;
-    border-top: 20px thin blue;
-    border-bottom: 20px thin blue;
-
+    border-top: 2px solid aqua;
+    border-bottom: 2px solid aqua;
+    padding-bottom: 5px;
 }
 
 .user-name{
@@ -41,8 +48,13 @@
     font-size: 30px;
 }
 
-.photo{
+.photo {
     border: 1px solid black;
+}
+
+#mapDiv {
+    height: 250px;
+    width: inherit;
 }
 
 
