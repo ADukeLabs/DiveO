@@ -22,36 +22,38 @@
                         <p>@Html.DisplayFor(model => model.Description)</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <h6>Home Base</h6>
-                        <p>@Html.DisplayFor(model => model.HomeBase)</p>
-                    </div>
-                    <div class="col-sm-4">
-                        <h6>Certification Level</h6>
-                        <p>@Html.DisplayFor(model => model.Certification)</p>
-                    </div>
 
+                <div class="content">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h6>Home Base</h6>
+                            <p>@Html.DisplayFor(model => model.HomeBase)</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <h6>Certification Level</h6>
+                            <p>@Html.DisplayFor(model => model.Certification)</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <h6>Dives Completed</h6>
+                            @*<p>@Html.DisplayFor()</p>*@
+                        </div>
+                    </div>
                 </div>
+
+                <div class="content">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <button class="btn btn-primary">@Html.ActionLink("Dive Log", "DiveLog", "Dive", new { id = Model.Id }, null)</button>
+                            <button class="btn btn-primary">@Html.ActionLink("Add A Dive", "Create", "Dive", new { id = Model.Id }, null)</button>
+                        </div>
+                    </div>
+                </div>
+
+                
 
             </div>
         </div>
      </div>
-
-      <div class="row">
-          <div class="well col-sm-8 col-sm-offset-2">
-              <div class="content">
-                  
-                  <div class="col-sm-8">
-                    <button class="btn btn-primary">@Html.ActionLink("Dive Log", "DiveLog", "Dive", new { id = Model.Id }, null)</button>
-                    <button class="btn btn-primary">@Html.ActionLink("Add A Dive", "Create", "Dive", new { id = Model.Id }, null)</button>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-
-
 
         @*<p>
                 @Html.ActionLink("Dive Log", "Index", "Dive") |
@@ -59,13 +61,4 @@
                 @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
                 @Html.ActionLink("Back to List", "Index")
             </p>*@
-
-
-
-
-
-    
-
-    
-
->            
+           
