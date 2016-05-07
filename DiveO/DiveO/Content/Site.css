@@ -29,8 +29,9 @@
 
 .content{
     color: aqua;
-    border-top: 2px solid aqua;
-    border-bottom: 2px solid aqua;
+    border-top: 1px solid aqua;
+    border-bottom: 1px solid aqua;
+    padding-top: 5px;
     padding-bottom: 5px;
 }
 
