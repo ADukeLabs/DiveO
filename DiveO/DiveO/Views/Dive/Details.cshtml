@@ -2,8 +2,10 @@
 @model DiveO.ViewModels.DiveViewModel
 
 <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-        <h2 class="text-primary well">@Html.DisplayFor(model => Model.Dive.DiveSite), @Html.DisplayFor(model => Model.Dive.Location)</h2>
+    <div class="well col-sm-8 col-sm-offset-2">
+        <div class="content">
+            <h2>@Html.DisplayFor(model => Model.Dive.DiveSite), @Html.DisplayFor(model => Model.Dive.Location)</h2>
+        </div>
     </div>
 </div>
 
