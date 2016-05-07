@@ -46,7 +46,7 @@ namespace DiveO.Controllers
             dvm.ProfilePic = db.Divers.Find(id).ProfilePic;
             dvm.HomeBase = db.Divers.Find(id).Location;
             dvm.Certification = db.Divers.Find(id).Certification;
-            //Diver diver = db.Divers.Find(id);
+            dvm.DiveCount = db.Divers.Find(id).DiveLog.Count();
             if (dvm == null)
             {
                 return HttpNotFound();

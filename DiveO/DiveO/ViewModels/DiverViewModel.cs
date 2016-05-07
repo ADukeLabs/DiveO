@@ -17,6 +17,7 @@ namespace DiveO.ViewModels
         public string HomeBase { get; set; }
         public string Description { get; set; }
         public CertificationLevel Certification { get; set; }
-        public IEnumerable<Diver> DiverList { get; set; } 
+        public IEnumerable<Diver> DiverList { get; set; }
+        public int DiveCount { get; set; } 
     }
 }
