@@ -125,7 +125,7 @@ namespace DiveO.Controllers
                 }
                 db.Entry(dive).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Feed");
             }
             return View(dive);
         }
