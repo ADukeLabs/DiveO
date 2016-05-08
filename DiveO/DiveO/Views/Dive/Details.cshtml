@@ -60,10 +60,18 @@
     </div>
 </div>
 
-<p>
+<div class="row">
+    <div class="well col-sm-8 col-sm-offset-2">
+        <div class="content">
+            <button class="btn btn-primary">@Html.ActionLink("Update", "Edit", new { id = Model.Dive.Id})</button>
+        </div>
+    </div>
+</div>
+
+@*<p>
     @Html.ActionLink("Edit", "Edit", new { id = new Dive().Id}) |
     @Html.ActionLink("Back to List", "Index")
-</p>
+</p>*@
 
 <script type="text/javascript">
         function initialize() {
