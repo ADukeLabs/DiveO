@@ -84,7 +84,7 @@ namespace DiveO.Controllers
 
                 db.Dives.Add(dive);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Feed");
             }
             return View(dive);
         }
