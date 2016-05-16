@@ -346,11 +346,11 @@
     <Content Include="Views\Dive\Edit.cshtml" />
     <Content Include="Views\Dive\Index.cshtml" />
     <Content Include="Views\Dive\DiveLog.cshtml" />
+    <Content Include="Views\Photo\GetPhoto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Images\" />
-    <Folder Include="Views\Photo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
