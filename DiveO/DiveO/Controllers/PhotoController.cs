@@ -15,10 +15,9 @@ namespace DiveO.Controllers
         // GET: Photo
         public ActionResult GetPhoto(int? id)
         {
-
-            DiveViewModel dvm = new DiveViewModel();
-            dvm.Photos = db.Photos.Find();
-            return View();
+            PhotoViewModel pvm = new PhotoViewModel();
+            pvm.Photo = db.Photos.Find(id);
+            return View(pvm);
         }
 
 
