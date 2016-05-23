@@ -8,6 +8,6 @@ namespace DiveO.ViewModels
 {
     public class PhotoViewModel
     {
-        public Photo Photo { get; set; }
+        public List<Photo> Photos { get; set; }
     }
 }
