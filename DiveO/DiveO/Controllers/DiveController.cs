@@ -78,7 +78,7 @@ namespace DiveO.Controllers
                         Photo photo = new Photo();
                         photo.DiveId = dive.Id;
                         photo.PhotoBytes = new ImageProcessor().ImageToByteArray(p);
-                        db.DivePhotos.Add(photo);
+                        db.Photos.Add(photo);
                     }
                 }
 
@@ -120,7 +120,7 @@ namespace DiveO.Controllers
                         Photo photo = new Photo();
                         photo.DiveId = dive.Id;
                         photo.PhotoBytes = new ImageProcessor().ImageToByteArray(p);
-                        db.DivePhotos.Add(photo);
+                        db.Photos.Add(photo);
                     }
                 }
                 db.Entry(dive).State = EntityState.Modified;

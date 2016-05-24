@@ -41,6 +41,6 @@ namespace DiveO.Models
 
         public DbSet<Diver> Divers { get; set; }
         public DbSet<Dive> Dives { get; set; }
-        public DbSet<Photo> DivePhotos { get; set; }
+        public DbSet<Photo> Photos { get; set; }
     }
 }

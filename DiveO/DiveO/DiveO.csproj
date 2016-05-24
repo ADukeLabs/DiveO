@@ -200,6 +200,7 @@
     <Compile Include="Controllers\DiversController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PhotoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -266,6 +267,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\DiverViewModel.cs" />
     <Compile Include="ViewModels\DiveViewModel.cs" />
+    <Compile Include="ViewModels\PhotoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -344,6 +346,7 @@
     <Content Include="Views\Dive\Edit.cshtml" />
     <Content Include="Views\Dive\Index.cshtml" />
     <Content Include="Views\Dive\DiveLog.cshtml" />
+    <Content Include="Views\Photo\GetPhoto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

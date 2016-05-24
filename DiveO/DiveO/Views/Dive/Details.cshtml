@@ -53,9 +53,12 @@
             <h3>Photos</h3>
             @foreach (var item in Model.Photos)
             {
-            var img = new ImageProcessor().ByteToImage(item.PhotoBytes);
-            <img src="@img" width="50" height="50" />
-           }
+                var img = new ImageProcessor().ByteToImage(item.PhotoBytes);
+
+                <a href="@Url.Action("GetPhoto", "Photo", new { id = Model.Dive.Id }, null)">
+                    <img src="@img" width="50" height="50" />
+                </a>
+            }
         </div>
     </div>
 </div>
