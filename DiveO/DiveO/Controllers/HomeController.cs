@@ -20,7 +20,7 @@ namespace DiveO.Controllers
             this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
         }
 
-        [Authorize]
+        //[Authorize]
         public ActionResult Feed()
         {
             DiverViewModel dvm = new DiverViewModel();

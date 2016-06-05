@@ -5,15 +5,14 @@
     <div class="well col-sm-8 col-sm-offset-2">
         <div id="image-container">
             <div id="next">></div>
-            @*@foreach (var p in Model.Photos)
-            {*@
+            @foreach (var p in Model.Photos)
+            {
 
-                @{
                     //var img = new ImageProcessor().ByteToImage(Model.Photos.Find(p => p.Id == id));
-                    //var img = new ImageProcessor().ByteToImage(p.PhotoBytes);
-                }
+                    var img = new ImageProcessor().ByteToImage(p.PhotoBytes);
+               
                 <img src="@img" height="500" width="500" />
-            @*}*@
+            }
         </div>
     </div>
 </div>

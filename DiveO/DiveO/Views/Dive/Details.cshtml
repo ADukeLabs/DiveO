@@ -18,22 +18,17 @@
 
         <div class="content">
             <div class="row">
-                <div class="col-sm-2">
+                <div class="col-sm-4">
                     <h4>Date</h4>
-                    <p>@Html.DisplayFor(model => model.Dive.DateTime.Date)</p>
+                    <p>@Html.DisplayFor(model => model.Dive.DateTime)</p>
                 </div>
 
-                <div class="col-sm-2">
-                    <h4>Time</h4>
-                    <p>@Html.DisplayFor(model => model.Dive.DateTime.Hour)</p>
-                </div>
-
-                <div class="col-sm-2">
+                <div class="col-sm-4">
                     <h4>Duration</h4>
                     <p>@Html.DisplayFor(model => model.Dive.Duration)</p>
                 </div>
 
-                <div class="col-sm-2">
+                <div class="col-sm-4">
                     <h4>Depth</h4>
                     <p>@Html.DisplayFor(model => model.Dive.Depth)</p>
                 </div>
@@ -75,14 +70,3 @@
     @Html.ActionLink("Edit", "Edit", new { id = new Dive().Id}) |
     @Html.ActionLink("Back to List", "Index")
 </p>*@
-
-<script type="text/javascript">
-        function initialize() {
-            var mapOptions = {
-                center: new google.maps.LatLng(0, 0),
-                zoom: 4
-            };
-            var map = new google.maps.Map(document.getElementById("mapDiv"), mapOptions);
-        }
-        google.maps.event.addDomListener(window, "load", initialize);
-</script>
