@@ -1,4 +1,5 @@
 ﻿var initialLocation;
+var middleOfOcean = new google.maps.LatLng(-20.170303, -159.959026);
 var browserSupportFlag = new Boolean();
 
 function initialize() {
@@ -17,5 +18,30 @@ function initialize() {
             handleNoGeolocation(browserSupportFlag);
         });
     }
+
+    else {
+        browserSupportFlag = false;
+        handleNoGeolocation(browserSupportFlag);
+    }
+
+    function handleNoGeolocation(errorFlag) {
+        if (errorFlag == true) {
+            alert("Geolocation Service Failed");
+        } else {
+            alert("Your browser doesn't support geolocation. We've placed you in the South Pacific");
+            initialLocation = middleOfOcean;
+        }
+        map.setCenter(initialLocation);
+    }
 }
+
+function mapForDiveDetails() {
+    var mapOptions = {
+        center: new google.maps.LatLng(0, 0),
+        zoom: 4
+    };
+    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
+
 google.maps.event.addDomListener(window, "load", initialize);
+google.maps.event.addDomListener(window, "load", mapForDiveDetails);
