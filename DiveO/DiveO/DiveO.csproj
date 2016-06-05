@@ -252,6 +252,14 @@
     <Compile Include="Migrations\201603051835374_ApplicationUser_AddedTo_Diver.Designer.cs">
       <DependentUpon>201603051835374_ApplicationUser_AddedTo_Diver.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606052116290_MapPoint_AddedTo_Dive.cs" />
+    <Compile Include="Migrations\201606052116290_MapPoint_AddedTo_Dive.Designer.cs">
+      <DependentUpon>201606052116290_MapPoint_AddedTo_Dive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606052228009_MapPoint_ChangedTo_FloatProperties.cs" />
+    <Compile Include="Migrations\201606052228009_MapPoint_ChangedTo_FloatProperties.Designer.cs">
+      <DependentUpon>201606052228009_MapPoint_ChangedTo_FloatProperties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Dive.cs" />
@@ -297,7 +305,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Maps.js" />
-    <Content Include="Scripts\MapToMVC.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
@@ -396,6 +403,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201603051835374_ApplicationUser_AddedTo_Diver.resx">
       <DependentUpon>201603051835374_ApplicationUser_AddedTo_Diver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606052116290_MapPoint_AddedTo_Dive.resx">
+      <DependentUpon>201606052116290_MapPoint_AddedTo_Dive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606052228009_MapPoint_ChangedTo_FloatProperties.resx">
+      <DependentUpon>201606052228009_MapPoint_ChangedTo_FloatProperties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

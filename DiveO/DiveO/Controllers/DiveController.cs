@@ -65,7 +65,7 @@ namespace DiveO.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         //[Authorize]
-        public ActionResult Create([Bind(Include = "Id,DiveSite,Location,DateTime,Duration,Depth,Description")] Dive dive, int? id, IEnumerable<HttpPostedFileBase> files)
+        public ActionResult Create([Bind(Include = "Id,DiveSite,Location,DateTime,Duration,Depth,Description")] Dive dive, int? id, IEnumerable<HttpPostedFileBase> files, float lat, float lng)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +81,8 @@ namespace DiveO.Controllers
                         db.Photos.Add(photo);
                     }
                 }
-
+                dive.Latitude = lat;
+                dive.Longitude = lng;
                 db.Dives.Add(dive);
                 db.SaveChanges();
                 return RedirectToAction("Feed");

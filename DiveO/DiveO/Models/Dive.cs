@@ -12,7 +12,8 @@ namespace DiveO.Models
         public int Id { get; set; }
         public string DiveSite { get; set; }
         public string Location { get; set; }
-        //public MapPoint MapPoint { get; set; }
+        public float Latitude { get; set; }
+        public float Longitude { get; set; }
         public DateTime DateTime { get; set; }
         public string Duration { get; set; }
         public string Depth { get; set; }
