@@ -259,6 +259,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Model Attributes\Certification.cs" />
+    <Compile Include="Models\Model Attributes\MapPoint.cs" />
     <Compile Include="Models\Model Attributes\Photo.cs" />
     <Compile Include="Models\Shop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
