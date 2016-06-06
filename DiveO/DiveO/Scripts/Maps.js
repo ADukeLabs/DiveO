@@ -35,18 +35,25 @@ function initialize() {
     }
 }
 
-function CoordsToCreateDive() {
+function DiveLatLng() {
     // data variable containing initalLocation lat and long
-    var locationData = {
+    var mapPoint = {
         Latitude: initialLocation.lat(),
         Longitude: initialLocation.lng()
     }
 
     $.ajax({
-        url: '/Dive/Create',
         type: 'POST',
-        data: locationData,
-        dataType: 'json'
+        url: '@Url.Content("/Dive/Create")',
+        data: mapPoint,
+        dataType: 'json',
+        success: function (data) {
+            alert: "Data sent successfully";
+            alert: (data);
+        },
+        error: function(){
+            alert: "Error: data not sent successully";
+        }
     });
 }
 
