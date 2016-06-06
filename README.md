@@ -15,4 +15,4 @@ Clicking on a photo will display it in its own view, allowing diver to view phot
 
 # Upcoming Features
 
-Diver will be able to log location of dive site by taking a reading and displaying geographical coordinates on Google Maps.
+Diver will be able to log the geographical location of a dive site when creating a dive object. Using Google Maps Geolocation API, diver will store Latitude and Longitude of dive location, and have it display on the dive details page.
