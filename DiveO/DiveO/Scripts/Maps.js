@@ -37,16 +37,17 @@ function initialize() {
 
 function DiveLatLng() {
     // data variable containing initalLocation lat and long
-    var mapPoint = {
-        Latitude: initialLocation.lat(),
-        Longitude: initialLocation.lng()
+    var coords = {
+        Latitude: new google.maps.LatLng(position.coords.latitude),
+        Longitude: new google.maps.LatLng(position.coords.longitude)
     }
 
     $.ajax({
         type: 'POST',
-        url: '@Url.Content("/Dive/Create")',
-        data: mapPoint,
+        url: '/Dive/Create',
         dataType: 'json',
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({mapPoint: coords}),
         success: function (data) {
             alert: "Data sent successfully";
             alert: (data);
@@ -57,7 +58,7 @@ function DiveLatLng() {
     });
 }
 
-function DiveDetailsMap(lat, lng) {
+function DiveDetailsMap(lat,lng) {
 
     var diveSite = new google.maps.LatLng(lat, lng);
 
