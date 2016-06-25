@@ -6,11 +6,9 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
-    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAsgBZrYs3xpDSqC3F5cIZQMhsQkTwjJgY"></script>
-    @*<script type="text/javascript" src="https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAOO5HVTCLP1wufRaRkM_vz7o5AQKyu7k8"></script>*@
-    <script type="text/javascript" src="~/Scripts/Maps.js"></script>
-    <script type="text/javascript" src="~/Scripts/ViewEvents.js"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyCWSXvj5MV4bFA_LBW_pTKHBQCBiQVpZeY&sensor=true"></script>
+    @*<script type="text/javascript" src="https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDtGoc6XWfu1WpJTL4D-H-ZvDqeaxRWZMU"></script>*@
+    
 </head>
 <body>
 
@@ -43,6 +41,7 @@
         <p>&copy; @DateTime.Now.Year - Alex Duke Software Developer</p>
     </footer>
 
+    @Scripts.Render("~/Scripts/Maps.js")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

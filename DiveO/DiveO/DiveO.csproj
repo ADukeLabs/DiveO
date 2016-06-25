@@ -252,6 +252,14 @@
     <Compile Include="Migrations\201603051835374_ApplicationUser_AddedTo_Diver.Designer.cs">
       <DependentUpon>201603051835374_ApplicationUser_AddedTo_Diver.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606052116290_MapPoint_AddedTo_Dive.cs" />
+    <Compile Include="Migrations\201606052116290_MapPoint_AddedTo_Dive.Designer.cs">
+      <DependentUpon>201606052116290_MapPoint_AddedTo_Dive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606052228009_MapPoint_ChangedTo_FloatProperties.cs" />
+    <Compile Include="Migrations\201606052228009_MapPoint_ChangedTo_FloatProperties.Designer.cs">
+      <DependentUpon>201606052228009_MapPoint_ChangedTo_FloatProperties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Dive.cs" />
@@ -259,6 +267,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Model Attributes\Certification.cs" />
+    <Compile Include="Models\Model Attributes\MapPoint.cs" />
     <Compile Include="Models\Model Attributes\Photo.cs" />
     <Compile Include="Models\Shop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -394,6 +403,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201603051835374_ApplicationUser_AddedTo_Diver.resx">
       <DependentUpon>201603051835374_ApplicationUser_AddedTo_Diver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606052116290_MapPoint_AddedTo_Dive.resx">
+      <DependentUpon>201606052116290_MapPoint_AddedTo_Dive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606052228009_MapPoint_ChangedTo_FloatProperties.resx">
+      <DependentUpon>201606052228009_MapPoint_ChangedTo_FloatProperties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
