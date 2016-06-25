@@ -2,12 +2,13 @@
 var southPacific = new google.maps.LatLng(-20.170303, -159.959026);
 var browserSupportFlag = new Boolean();
 
-function initialize() {
+function CreateDiveMap() {
+
     var mapOptions = {
-        zoom: 12
+        zoom: 12,
+        center: initialLocation
     };
     var mapObject = new google.maps.Map(document.getElementById("mapDiv"), mapOptions);
-    new google.maps.Marker({ map: mapObject, postition: initialLocation });
 
     if (navigator.geolocation) {
         browserSupportFlag = true;
@@ -33,24 +34,33 @@ function initialize() {
         }
         mapObject.setCenter(initialLocation);
     }
+
+    var circle = new google.maps.circle({
+        center: initialLocation,
+        radius: position.coords.accuracy,
+        map: mapObject,
+        fillColor: '#0000FF',
+        fillOpacity: 0.5,
+        strokeColor: '#0000FF',
+        strokeOpacity: 1.0
+    });
+
+    mapObject.fitBounds(circle.getBounds());
 }
 
 function DiveLatLng() {
-    // data variable containing initalLocation lat and long
-    var coords = {
-        Latitude: new google.maps.LatLng(position.coords.latitude),
-        Longitude: new google.maps.LatLng(position.coords.longitude)
-    }
+
+    var Latitude = initialLocation.coords.latitude;
+    var Longitude = initialLocation.coords.longitude;
+
+    var url = "http://localhost:52737/Dive/Create/";
 
     $.ajax({
         type: 'POST',
-        url: '/Dive/Create',
-        dataType: 'json',
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({mapPoint: coords}),
-        success: function (data) {
+        url: url,
+        data: {'lat': Latitude, 'lng': Longitude},
+        success: function () {
             alert: "Data sent successfully";
-            alert: (data);
         },
         error: function(){
             alert: "Error: data not sent successully";
@@ -58,16 +68,22 @@ function DiveLatLng() {
     });
 }
 
-function DiveDetailsMap(lat,lng) {
+function mapForDiveDetails() {
 
-    var diveSite = new google.maps.LatLng(lat, lng);
+    //var diveSite = new google.maps.LatLng(southPacific);
 
     var mapOptions = {
-        center: diveSite,
-        zoom: 12
+        zoom: 12,
+        center: southPacific
     };
+    
+    //var marker = new google.maps.Marker({
+    //    position: diveSite,
+    //    map: map
+    //});
+
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 }
 
-google.maps.event.addDomListener(window, "load", initialize);
+google.maps.event.addDomListener(window, "load", CreateDiveMap);
 google.maps.event.addDomListener(window, "load", mapForDiveDetails);
