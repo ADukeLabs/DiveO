@@ -14,7 +14,7 @@ namespace DiveO.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Photo
-        public ActionResult GetPhoto(int? id)
+        public ActionResult Photo(int? id)
         {
             PhotoViewModel pvm = new PhotoViewModel();
             pvm.Photos = db.Photos.ToList().FindAll(p => p.DiveId == id);
