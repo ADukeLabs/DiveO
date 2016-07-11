@@ -310,7 +310,6 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\ViewEvents.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -357,7 +356,7 @@
     <Content Include="Views\Dive\Edit.cshtml" />
     <Content Include="Views\Dive\Index.cshtml" />
     <Content Include="Views\Dive\DiveLog.cshtml" />
-    <Content Include="Views\Photo\GetPhoto.cshtml" />
+    <Content Include="Views\Photo\Photo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
