@@ -55,7 +55,7 @@
 }
 
 #map {
-    height: 250px;
+    height: 270px;
     width: inherit;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -66,10 +66,15 @@
     width: inherit;
 }
 
+.item active{
+    margin: auto;
+    height: inherit;
+    width: inherit;
+}
+
 .dive-image{
     margin: auto;
 }
-
 
 
 
