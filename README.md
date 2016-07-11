@@ -8,9 +8,7 @@ Main page is a user feed displaying the new dives a diver and other divers have 
 
 The diver or other diver friends can view a diver's dive log.
 
-Clicking on a particular dive displays the dive's details. Page includes dive site name, location on map via Google Map Api, date and time, depth, time under, experience description, and collection of photos. 
-
-Clicking on a photo will display it in its own view, allowing diver to view photo in bigger display.
+Clicking on a particular dive displays the dive's details. Page includes dive site name, location on map via Google Map Api, date and time, depth, time under, experience description, and carousel of photos taken from dive.
 
 
 # Upcoming Features
